@@ -1,0 +1,11 @@
+.DS_Store
+
+# Local Figma working files and the unused local Bing reconstruction.
+# The published site uses bing-figma-embed.html instead.
+.figma-build/
+.figma-context/
+assets/bing-app/
+bing-app.html
+bing-app.css
+bing-app.js
+bing-app.bundle.js

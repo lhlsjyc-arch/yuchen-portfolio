@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="YC Dashboard 个人 AI 工作台：捕捉意图、委托任务，并让人与智能体的协作过程保持可观察、可修正、可接管。"
+    />
+    <title>YC Dashboard｜井雨晨产品设计作品集</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./yc-dashboard.css" />
+  </head>
+  <body class="yc-page case-page">
+    <a class="skip-link" href="#yc-main">跳到案例正文</a>
+
+    <header class="site-header">
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="./index.html#about">简介</a>
+        <a href="./index.html#work">项目</a>
+        <a href="./index.html#lab">实验</a>
+        <a href="./index.html#contact">联系</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-theme-toggle aria-label="切换深色模式" aria-pressed="false">
+          <span aria-hidden="true">☼</span>
+        </button>
+        <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+          <span>菜单</span>
+          <i aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <nav class="mobile-menu" id="mobile-menu" aria-label="移动端导航" hidden>
+        <a href="./index.html#about">01 · 简介</a>
+        <a href="./index.html#work">02 · 项目</a>
+        <a href="./index.html#lab">03 · 实验</a>
+        <a href="./index.html#contact">04 · 联系</a>
+      </nav>
+
+      <div class="reading-progress" aria-hidden="true"><i data-yc-reading-progress></i></div>
+    </header>
+
+    <main id="yc-main">
+      <section class="yc-hero" aria-labelledby="yc-title">
+        <div class="yc-hero-copy">
+          <p class="yc-kicker"><span>PERSONAL EXPERIMENT · WORK IN PROGRESS</span><b>2026</b></p>
+          <h1 id="yc-title"><span>YC</span><strong>Dashboard</strong></h1>
+          <p class="yc-hero-deck">
+            当 AI 开始持续工作，真正稀缺的不只是速度，<br />而是理解、判断与随时接管的能力。
+          </p>
+        </div>
+
+        <div class="yc-hero-workbench" aria-label="YC Dashboard 工作台预览">
+          <div class="yc-window-bar">
+            <span class="yc-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <b>YC / WORKBENCH</b>
+            <span class="yc-window-sync"><i></i> Context synced</span>
+          </div>
+
+          <div class="yc-workbench-shell">
+            <aside class="yc-workbench-nav" aria-label="工作台导航预览">
+              <div class="yc-monogram">YC</div>
+              <nav>
+                <span class="is-active"><i>⌂</i>Today</span>
+                <span><i>◎</i>Agents <b>2</b></span>
+                <span><i>□</i>Projects</span>
+                <span><i>↳</i>Inbox <b>4</b></span>
+              </nav>
+              <div class="yc-nav-project">
+                <small>ACTIVE PROJECT</small>
+                <p><i></i>Portfolio 2026</p>
+                <span>12 sources · 3 outputs</span>
+              </div>
+            </aside>
+
+            <div class="yc-workbench-main">
+              <header class="yc-dashboard-heading">
+                <div>
+                  <p>SUNDAY · NOV 22</p>
+                  <h2>Good morning, Yuchen.</h2>
+                </div>
+                <button type="button" aria-label="打开快速输入预览"><i></i> Quick capture</button>
+              </header>
+
+              <div class="yc-focus-grid">
+                <article class="yc-needs-you">
+                  <header><span>NEEDS YOU</span><b>02</b></header>
+                  <div class="yc-review-item">
+                    <span class="yc-agent-avatar">Y</span>
+                    <div><small>Portfolio agent</small><strong>确认公开叙事边界</strong><p>2 个内部指标需要你的判断</p></div>
+                    <i>→</i>
+                  </div>
+                  <div class="yc-review-item">
+                    <span class="yc-agent-avatar yc-agent-avatar-green">C</span>
+                    <div><small>Content agent</small><strong>选择项目开场版本</strong><p>3 个方向已整理完成</p></div>
+                    <i>→</i>
+                  </div>
+                </article>
+
+                <article class="yc-active-task">
+                  <header><span>ACTIVE NOW</span><i></i></header>
+                  <div class="yc-task-name">
+                    <span class="yc-agent-avatar">Y</span>
+                    <div><small>Portfolio agent</small><strong>整理 YC Dashboard 案例</strong></div>
+                  </div>
+                  <ol>
+                    <li class="is-done"><i>✓</i><span>读取项目材料</span></li>
+                    <li class="is-active"><i></i><span>建立故事结构</span><b>NOW</b></li>
+                    <li><i></i><span>生成页面原型</span></li>
+                  </ol>
+                  <footer><span>6 min ago</span><button type="button">View work</button></footer>
+                </article>
+
+                <article class="yc-recent-decision">
+                  <header><span>RECENT DECISION</span><b>↗</b></header>
+                  <blockquote>“个人实验需要同时展示能力与边界，不包装成商业上线产品。”</blockquote>
+                  <footer><span>Portfolio 2026</span><time>10:42</time></footer>
+                </article>
+              </div>
+
+              <div class="yc-voice-dock">
+                <button type="button" aria-label="开始语音输入"><span aria-hidden="true">◉</span></button>
+                <div><small>HOLD TO CAPTURE</small><p>说出一个尚未成形的想法…</p></div>
+                <span class="yc-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                <kbd>⌘ K</kbd>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="yc-hero-note">VOICE → INTENT → AGENT → REVIEW</p>
+      </section>
+
+      <section class="yc-problem" aria-labelledby="yc-problem-title">
+        <div class="yc-section-heading reveal">
+          <p class="yc-section-index">01 · WHY</p>
+          <h2 id="yc-problem-title">AI 越能做事，<br />工作却越难看清。</h2>
+          <p>
+            项目状态留在聊天里，证据散落在文件中，临时判断又只存在脑中。传统任务列表告诉我“做到了哪”，却无法解释“为什么这样做”。
+          </p>
+        </div>
+
+        <div class="yc-fragments reveal" aria-label="分散的工作信息示意">
+          <article class="yc-fragment yc-fragment-chat">
+            <span>CHAT · 10:24</span>
+            <p>这个指标可以公开吗？如果不行，就改成定性结果。</p>
+          </article>
+          <article class="yc-fragment yc-fragment-file">
+            <span>FILE · CASE-STUDY.MD</span>
+            <strong>34</strong><p>条待验证事实</p>
+          </article>
+          <article class="yc-fragment yc-fragment-task">
+            <span>TASK · IN PROGRESS</span>
+            <p>整理 Growth 项目</p><i></i>
+          </article>
+          <article class="yc-fragment yc-fragment-note">
+            <span>VOICE NOTE · 01:12</span>
+            <p>“重点不是做得更快，是我能不能随时改方向…”</p>
+            <div aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+          <p class="yc-fragments-question">发生了什么？<br /><b>为什么发生？</b><br />下一步谁来处理？</p>
+        </div>
+      </section>
+
+      <section class="yc-voice-feature" aria-labelledby="yc-voice-title" data-yc-voice-demo>
+        <div class="yc-voice-copy reveal">
+          <p class="yc-section-index">02 · VOICE INPUT</p>
+          <h2 id="yc-voice-title">语音不是输入法，<br />而是任务的起点。</h2>
+          <p class="yc-voice-lead">
+            很多想法刚出现时并不完整。相比要求用户先整理好再输入，我让系统先接住自然表达，再把它变成一份可以检查、修改和继续委托的任务草稿。
+          </p>
+
+          <ol class="yc-voice-decisions">
+            <li><span>01</span><div><strong>原话必须保留</strong><p>AI 的整理不能覆盖用户真正说过的话；转写错误时，也能回到原始表达核对。</p></div></li>
+            <li><span>02</span><div><strong>转写与理解分层</strong><p>“你说了什么”和“系统认为你想做什么”是两种信息，不能混成一段看似流畅的改写。</p></div></li>
+            <li><span>03</span><div><strong>确认后再委托</strong><p>项目、目标、边界和预期产物由用户确认；不完整的输入可以只保存，不必强行变成任务。</p></div></li>
+          </ol>
+        </div>
+
+        <div class="yc-voice-prototype reveal" data-yc-voice-card data-state="idle">
+          <header>
+            <div><span>VOICE INBOX</span><b>INTERACTION DEMO</b></div>
+            <i data-yc-voice-indicator></i>
+          </header>
+
+          <div class="yc-voice-recorder">
+            <p data-yc-voice-label>点击开始说话</p>
+            <button type="button" data-yc-voice-toggle aria-pressed="false" aria-label="开始语音输入">
+              <span aria-hidden="true"><i></i></span>
+            </button>
+            <div class="yc-voice-live-wave" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <time data-yc-voice-time>00:00</time>
+          </div>
+
+          <div class="yc-voice-result" data-yc-voice-result aria-live="polite">
+            <section>
+              <header><span>ORIGINAL TRANSCRIPT</span><button type="button" data-yc-edit-transcript>编辑</button></header>
+              <p>先把 YC Dashboard 的页面做了。它比较简单，但我想重点介绍一下我做的语音输入功能。</p>
+              <small>语音原文始终保留 · 可重新录制</small>
+            </section>
+
+            <section class="yc-voice-intent">
+              <header><span>SYSTEM UNDERSTANDING</span><b>请确认</b></header>
+              <dl>
+                <div><dt>项目</dt><dd>YC Dashboard</dd></div>
+                <div><dt>意图</dt><dd>制作作品集案例页面</dd></div>
+                <div><dt>重点</dt><dd>深入介绍语音输入功能</dd></div>
+                <div><dt>边界</dt><dd>个人实验，不包装成商业上线</dd></div>
+              </dl>
+            </section>
+          </div>
+
+          <footer>
+            <button type="button" class="yc-button-secondary" data-yc-voice-reset>重新录制</button>
+            <button type="button" class="yc-button-primary" data-yc-voice-confirm disabled>确认并创建任务 <span>→</span></button>
+          </footer>
+        </div>
+      </section>
+
+      <section class="yc-loop" aria-labelledby="yc-loop-title">
+        <header class="yc-loop-heading reveal">
+          <p class="yc-section-index">03 · THE MODEL</p>
+          <h2 id="yc-loop-title">把协作变成一条<br /><em>可以看见的回路。</em></h2>
+        </header>
+
+        <ol class="yc-loop-track reveal">
+          <li><span>01</span><i>◉</i><strong>捕捉</strong><p>保留原始语音与想法</p></li>
+          <li><span>02</span><i>?</i><strong>澄清</strong><p>确认目标、边界与权限</p></li>
+          <li><span>03</span><i>↗</i><strong>委托</strong><p>Agent 接受并拆解工作</p></li>
+          <li><span>04</span><i>◎</i><strong>观察</strong><p>过程、证据与阻塞可见</p></li>
+          <li><span>05</span><i>✓</i><strong>接管</strong><p>评审、改写或继续委托</p></li>
+        </ol>
+
+        <p class="yc-loop-principle reveal">
+          Human takeover is not a failure state.<br /><span>人的接管，是协作中正常的一步。</span>
+        </p>
+      </section>
+
+      <section class="yc-demo" aria-labelledby="yc-demo-title" data-yc-demo>
+        <header class="yc-demo-heading reveal">
+          <div>
+            <p class="yc-section-index">04 · TRY THE WORKFLOW</p>
+            <h2 id="yc-demo-title">同一个任务，<br />四个协作状态。</h2>
+          </div>
+          <p>选择一个阶段，看看系统如何在提供帮助的同时，把判断权留给人。</p>
+        </header>
+
+        <div class="yc-demo-controls reveal" role="tablist" aria-label="协作流程阶段">
+          <button id="yc-tab-capture" type="button" role="tab" aria-selected="true" aria-controls="yc-demo-panel" data-yc-step="capture"><span>01</span>捕捉意图</button>
+          <button id="yc-tab-clarify" type="button" role="tab" aria-selected="false" aria-controls="yc-demo-panel" data-yc-step="clarify" tabindex="-1"><span>02</span>需要澄清</button>
+          <button id="yc-tab-working" type="button" role="tab" aria-selected="false" aria-controls="yc-demo-panel" data-yc-step="working" tabindex="-1"><span>03</span>正在工作</button>
+          <button id="yc-tab-review" type="button" role="tab" aria-selected="false" aria-controls="yc-demo-panel" data-yc-step="review" tabindex="-1"><span>04</span>等待评审</button>
+        </div>
+
+        <div class="yc-demo-stage reveal" id="yc-demo-panel" role="tabpanel" aria-labelledby="yc-tab-capture" data-yc-demo-panel>
+          <aside class="yc-demo-project">
+            <p>PROJECT</p>
+            <h3>Portfolio<br />2026</h3>
+            <dl>
+              <div><dt>Goal</dt><dd>三个清晰案例</dd></div>
+              <div><dt>Sources</dt><dd>12 份材料</dd></div>
+              <div><dt>Privacy</dt><dd>内部信息脱敏</dd></div>
+            </dl>
+            <div class="yc-demo-memory"><i></i><span><b>Project memory</b>Last updated today</span><strong>ON</strong></div>
+          </aside>
+
+          <div class="yc-demo-conversation">
+            <header>
+              <div class="yc-demo-agent"><span>Y</span><p><strong>Portfolio agent</strong><small data-yc-agent-status>Listening to your intent</small></p></div>
+              <span class="yc-status-pill" data-yc-status-pill>CAPTURING</span>
+            </header>
+
+            <div class="yc-demo-body" aria-live="polite">
+              <p class="yc-demo-overline" data-yc-overline>VOICE INPUT · 00:18</p>
+              <blockquote data-yc-primary>“先把 YC Dashboard 的页面做了。它比较简单，但要讲清楚我为什么需要一个自己的 AI 工作台。”</blockquote>
+              <div class="yc-demo-wave" data-yc-wave aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <section class="yc-understanding" data-yc-understanding>
+                <header><span>SYSTEM UNDERSTANDING</span><b>Review before sending</b></header>
+                <ul data-yc-list>
+                  <li><i>01</i><span><b>Intent</b>制作 YC Dashboard 作品集页面</span></li>
+                  <li><i>02</i><span><b>Constraint</b>个人实验，不包装成商业产品</span></li>
+                  <li><i>03</i><span><b>Outcome</b>可浏览、可演示、移动端可读</span></li>
+                </ul>
+              </section>
+            </div>
+
+            <footer class="yc-demo-actions" data-yc-actions>
+              <button type="button" class="yc-button-secondary">保存为笔记</button>
+              <button type="button" class="yc-button-primary" data-yc-next>确认并委托 <span>→</span></button>
+            </footer>
+          </div>
+
+          <aside class="yc-demo-evidence">
+            <header><span>CONTEXT &amp; EVIDENCE</span><b>4</b></header>
+            <ul data-yc-evidence-list>
+              <li><i>MD</i><span><b>Project details</b>YC-dashboard-project-details-cn.md</span><strong>✓</strong></li>
+              <li><i>UI</i><span><b>Portfolio baseline</b>Existing site styles</span><strong>✓</strong></li>
+              <li><i>IMG</i><span><b>Project map</b>Original planning screenshot</span><strong>✓</strong></li>
+            </ul>
+            <div class="yc-assumption"><span>ASSUMPTION</span><p data-yc-assumption>页面先作为个人实验入口，不占三个商业案例的主位置。</p></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="yc-principles" aria-labelledby="yc-principles-title">
+        <header class="yc-principles-heading reveal">
+          <p class="yc-section-index">05 · PRODUCT PRINCIPLES</p>
+          <h2 id="yc-principles-title">不是让 AI 显得聪明，<br />而是让协作值得信任。</h2>
+        </header>
+
+        <div class="yc-principle-grid">
+          <article class="reveal">
+            <span>01</span><i>◎</i>
+            <h3>Show the work</h3>
+            <p>展示正在使用的上下文、关键动作和阻塞，而不是只给一个“处理中”。</p>
+          </article>
+          <article class="reveal">
+            <span>02</span><i>↳</i>
+            <h3>Make takeover normal</h3>
+            <p>暂停、改写、接管和恢复都是正常操作，不让用户因为介入而丢失进度。</p>
+          </article>
+          <article class="reveal">
+            <span>03</span><i>≠</i>
+            <h3>Evidence over confidence</h3>
+            <p>把已确认事实、系统推断和待验证问题分开呈现，不用肯定语气冒充证据。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="yc-status" aria-labelledby="yc-status-title">
+        <div class="yc-status-copy reveal">
+          <p class="yc-section-index">06 · CURRENT STATE</p>
+          <h2 id="yc-status-title">先诚实地展示<br />它现在是什么。</h2>
+          <p>
+            YC Dashboard 目前是一个持续演进的个人实验。这一版先建立协作模型和可交互的页面原型，后续再用真实使用记录验证哪些信息真正帮助人保持控制。
+          </p>
+        </div>
+
+        <div class="yc-status-board reveal">
+          <section>
+            <header><i></i><span>THIS VERSION</span></header>
+            <ul>
+              <li><span>✓</span>语音到意图的体验模型</li>
+              <li><span>✓</span>四阶段协作原型</li>
+              <li><span>✓</span>证据、假设和任务状态</li>
+              <li><span>✓</span>响应式与 reduced motion</li>
+            </ul>
+          </section>
+          <section>
+            <header><i></i><span>NEXT TO VALIDATE</span></header>
+            <ul>
+              <li><span>→</span>接入真实语音与任务执行</li>
+              <li><span>→</span>连续一周个人使用日志</li>
+              <li><span>→</span>接管与恢复是否足够清楚</li>
+              <li><span>→</span>敏感数据与长期记忆治理</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="yc-next" aria-labelledby="yc-next-title">
+        <p class="yc-section-index">PERSONAL LAB · 01</p>
+        <div class="yc-next-copy reveal">
+          <span>我设计 AI 产品，也用自己作为第一个用户。</span>
+          <h2 id="yc-next-title">让人始终知道，<br /><em>何时该相信，何时该接管。</em></h2>
+          <div>
+            <a href="./index.html#work">返回项目</a>
+            <a href="mailto:yuchen.portfolio@example.com">聊聊这个实验 ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>YUCHEN'S FOLIO · PERSONAL LAB · 2026</span>
+      <a href="#yc-main">回到顶部 ↑</a>
+    </footer>
+
+    <script src="./script.js?v=head-turn-4"></script>
+    <script src="./yc-dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Copilot for Mac 产品设计案例：从窗口、输入与平台行为出发，建立完整、一致、符合 macOS 的桌面体验。"
+    />
+    <title>Copilot in Mac｜井雨晨产品设计作品集</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./copilot-mac.css" />
+  </head>
+  <body class="case-page">
+    <a class="skip-link" href="#case-main">跳到案例正文</a>
+
+    <header class="site-header">
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="./index.html#about">简介</a>
+        <a href="./index.html#work">项目</a>
+        <a href="./index.html#project-lab">实验</a>
+        <a href="./index.html#contact">联系</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
+          <span>菜单</span>
+          <i aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <nav class="mobile-menu" id="mobile-menu" aria-label="移动端导航" hidden>
+        <a href="./index.html#about">01 · 简介</a>
+        <a href="./index.html#work">02 · 项目</a>
+        <a href="./index.html#project-lab">03 · 实验</a>
+        <a href="./index.html#contact">04 · 联系</a>
+      </nav>
+
+      <div class="reading-progress" aria-hidden="true"><i data-reading-progress></i></div>
+    </header>
+
+    <main id="case-main">
+      <section class="copilot-film" data-scroll-film aria-labelledby="case-title">
+        <div class="copilot-film-sticky">
+          <div class="copilot-film-media">
+            <canvas class="copilot-film-canvas" data-scroll-canvas aria-hidden="true"></canvas>
+
+            <div class="copilot-film-product-stack">
+              <figure class="copilot-film-product">
+                <img
+                  src="./assets/copilot-mac-hero.png"
+                  alt="Copilot for Mac 主窗口界面"
+                  width="1220"
+                  height="800"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+              </figure>
+
+              <figure class="copilot-film-mini-window">
+                <span class="copilot-film-mini-window-surface">
+                  <img
+                    src="./assets/copilot-mini-window.png"
+                    alt="Copilot for Mac Mini Window 界面"
+                    width="824"
+                    height="1216"
+                    decoding="async"
+                  />
+                </span>
+              </figure>
+            </div>
+          </div>
+
+          <div class="copilot-film-copy">
+          <p class="case-kicker"><span>MICROSOFT · 2025.08—2026.06</span></p>
+          <h1 id="case-title">Copilot for Mac</h1>
+          <p class="case-deck">
+            将对话、搜索、研究与创作带入桌面工作流，让持续增长的 AI 能力形成完整、一致的 macOS 体验。
+          </p>
+          </div>
+
+          <div class="copilot-film-cue" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i>↓</i></div>
+        </div>
+      </section>
+
+      <section class="project-introduction" id="overview" aria-labelledby="project-introduction-title">
+        <div class="project-introduction-lead reveal">
+          <p class="project-introduction-kicker">01 PRODUCT OVERVIEW</p>
+          <h2 id="project-introduction-title">Copilot for Mac<span class="project-introduction-title-line">不是网页版的简单封装</span></h2>
+          <p>
+            Copilot for Mac 是 Copilot 面向 macOS 的完整桌面产品。它把对话、搜索、研究与创作带进日常工作流，并通过系统入口、窗口关系、输入与反馈，形成适合 Mac 的整体体验。
+          </p>
+        </div>
+
+        <div class="project-introduction-overview">
+          <section class="product-overview-stage" aria-label="Copilot for Mac 产品界面总览与项目职责" data-product-dome>
+            <div class="product-overview-sticky" data-product-dome-sticky>
+              <div class="product-overview-dome-main" data-product-dome-main>
+                <div class="product-overview-dome-stage">
+                  <div class="product-overview-dome-sphere" data-product-dome-sphere></div>
+                </div>
+                <div class="product-overview-dome-vignette" aria-hidden="true"></div>
+                <div class="product-overview-dome-blur" aria-hidden="true"></div>
+                <div class="product-overview-dome-edge product-overview-dome-edge-top" aria-hidden="true"></div>
+                <div class="product-overview-dome-edge product-overview-dome-edge-bottom" aria-hidden="true"></div>
+              </div>
+
+              <div class="product-overview-narrative" data-product-dome-content>
+                <p class="product-map-context">
+                  <span class="product-role-focus">功能扩展越快，产品基础越需要稳定</span>
+                </p>
+
+                <div class="product-map is-visible" aria-label="功能扩展与产品基础体验结构">
+                  <div class="product-structure">
+                    <section class="product-tier product-feature" aria-labelledby="feature-expansion-title">
+                      <h3 id="feature-expansion-title">不断扩展的功能</h3>
+                      <ul class="feature-modules" aria-label="持续扩展的产品功能">
+                        <li>File download</li>
+                        <li>Pages</li>
+                        <li>Connector</li>
+                        <li>Voice &amp; Vision</li>
+                        <li>Writing Tools</li>
+                        <li>Library</li>
+                        <li>Cowork</li>
+                        <li>Projects</li>
+                        <li>Podcast</li>
+                        <li>…</li>
+                      </ul>
+                    </section>
+                    <section class="product-tier product-foundation" aria-labelledby="quality-foundation-title">
+                      <header>
+                        <h3 id="quality-foundation-title">产品的基础体验</h3>
+                      </header>
+                      <ul class="foundation-modules" aria-label="产品基础体验模块">
+                        <li><a href="#design-system-framework"><span>01</span><strong>产品框架定义</strong><p>窗口 · 导航 · 内容区域 · 响应式</p></a></li>
+                        <li><a href="#design-system-components"><span>02</span><strong>组件系统搭建</strong><p>顶部栏 · 对话框 · 输入区 · 通知</p></a></li>
+                        <li><a href="#design-system-interaction"><span>03</span><strong>交互动效规范</strong><p>审计 · 规范 · Token · 验证</p></a></li>
+                        <li><a href="#design-system-macos"><span>04</span><strong>macOS 原生体验</strong><p>窗口 · 材质 · 滚动 · 明暗模式</p></a></li>
+                      </ul>
+                    </section>
+                  </div>
+                </div>
+              </div>
+
+              <p class="product-overview-dome-cue" aria-hidden="true"><span>拖动浏览 · 继续滚动</span><i>↓</i></p>
+            </div>
+          </section>
+        </div>
+
+        <section class="design-system-preview" aria-labelledby="design-system-preview-title">
+          <header class="design-system-preview-heading reveal">
+            <p>DESIGN SYSTEM</p>
+            <h2 id="design-system-preview-title">让不断扩展的 Feature，<br />共享一套产品语言</h2>
+          </header>
+          <figure class="design-system-film reveal">
+            <video
+              data-design-system-video
+              muted
+              playsinline
+              preload="metadata"
+              poster="./assets/copilot-mac-design-system-poster.webp"
+              aria-label="Copilot for Mac Design System 演示"
+            >
+              <source src="./assets/copilot-mac-design-system.mp4" type="video/mp4" />
+            </video>
+          </figure>
+
+          <div class="design-system-story">
+            <div class="design-system-detail">
+              <div class="design-system-examples" aria-label="Design System 应用示例">
+                <article class="design-system-example" id="design-system-framework" aria-labelledby="design-system-layout-example-title">
+                  <h4 class="reveal" id="design-system-layout-example-title">产品框架定义</h4>
+                  <div class="layout-sequence">
+                    <section class="layout-step reveal" aria-labelledby="layout-layers-title">
+                      <header class="layout-step-header">
+                        <p class="design-system-label">01 · PRODUCT LAYERS</p>
+                        <div>
+                          <h5 id="layout-layers-title">先定义产品由哪些层共同构成</h5>
+                          <p>从 macOS 原生窗口开始，逐层明确背景与材质、页面内容和功能组件的归属。让每个 Feature 都建立在同一套层级关系上，而不是各自组织界面。</p>
+                        </div>
+                      </header>
+                      <figure>
+                        <img
+                          src="./assets/copilot-design-system-layout.webp"
+                          width="2480"
+                          height="1369"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Copilot for Mac 窗口、页面、内容与原生组件的分层布局示例"
+                        />
+                      </figure>
+                    </section>
+
+                    <section class="layout-step reveal" aria-labelledby="layout-framework-title">
+                      <header class="layout-step-header">
+                        <p class="design-system-label">02 · PRODUCT FRAMEWORK</p>
+                        <div>
+                          <h5 id="layout-framework-title">再把层级落实为稳定的产品框架</h5>
+                          <p>定义 Sidebar、Header、Content 与 Composer 的默认尺寸、最小边界和伸缩关系。新的内容模式可以进入同一个 Shell，不必重新发明窗口结构。</p>
+                        </div>
+                      </header>
+                      <figure>
+                        <img
+                          src="./assets/copilot-design-system-main-window-layout.webp"
+                          width="2480"
+                          height="815"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Copilot for Mac 主窗口的响应式、默认尺寸与最小尺寸布局规范"
+                        />
+                      </figure>
+                    </section>
+
+                    <section class="layout-step reveal" aria-labelledby="layout-responsive-title">
+                      <header class="layout-step-header">
+                        <p class="design-system-label">03 · RESPONSIVENESS</p>
+                        <div>
+                          <h5 id="layout-responsive-title">最后，让框架适应不同窗口与内容</h5>
+                          <p>以断点为边界，根据内容类型决定列数、内容宽度、沉浸模式与 Composer 行为。响应式不是按比例缩放，而是在窗口变化时保留稳定的任务关系。</p>
+                        </div>
+                      </header>
+                      <figure>
+                        <img
+                          src="./assets/copilot-design-system-responsive-layout.webp"
+                          width="2480"
+                          height="1339"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Copilot for Mac 在不同断点与内容类型下的响应式布局规范"
+                        />
+                      </figure>
+                    </section>
+                  </div>
+                </article>
+
+                <article class="design-system-example design-system-components" id="design-system-components" aria-labelledby="design-system-components-example-title">
+                  <h4 class="reveal" id="design-system-components-example-title">组件系统搭建</h4>
+                  <section class="dialog-case" aria-label="Dialog 组件案例">
+                    <section class="design-system-method dialog-workflow reveal" aria-labelledby="dialog-workflow-title">
+                      <header>
+                        <p class="design-system-label">HOW IT WAS BUILT</p>
+                        <h5 id="dialog-workflow-title">从真实产品问题，<br />形成可复用的组件标准</h5>
+                      </header>
+                      <ol class="design-system-process" aria-label="Dialog 组件建立流程">
+                        <li><span>01</span><b>收集</b><p>从真实 Feature 中识别重复问题</p></li>
+                        <li><span>02</span><b>提取</b><p>把局部方案整理为共享模式</p></li>
+                        <li><span>03</span><b>验证</b><p>放回代表场景中检验完整体验</p></li>
+                        <li><span>04</span><b>实现</b><p>与开发共同确认规则和边界</p></li>
+                        <li><span>05</span><b>回归</b><p>在真实 Build 中持续修正</p></li>
+                      </ol>
+                    </section>
+
+                    <div class="dialog-sequence">
+                      <section class="dialog-step reveal" aria-labelledby="dialog-surface-title">
+                        <header class="dialog-step-header">
+                          <p class="design-system-label">01 · SURFACE CHOICE</p>
+                          <div>
+                            <h6 id="dialog-surface-title">先决定，应该使用系统 Dialog 还是产品 Dialog</h6>
+                            <p>权限、退出与防止数据丢失等系统级行为使用 macOS 原生 Dialog；发生在 Copilot 工作流中的授权、反馈与任务确认，则保留产品上下文和 Copilot 的视觉语言。</p>
+                          </div>
+                        </header>
+                        <div class="dialog-surface-comparison" aria-label="系统 Dialog 与 Copilot 产品 Dialog 对比">
+                          <article class="dialog-surface-option dialog-surface-system">
+                            <span>macOS System Dialog</span>
+                            <div class="dialog-system-window" aria-hidden="true">
+                              <span class="dialog-system-help">?</span>
+                              <div class="dialog-system-icon">
+                                <img src="assets/copilot-system-dialog-icon.png" alt="" />
+                              </div>
+                              <div class="dialog-system-copy">
+                                <strong>“Copilot” may not be able to<br />record the contents of your screen<br />until it is quit</strong>
+                                <p>You can choose to quit “Copilot” now, or do<br />it on your own later</p>
+                              </div>
+                              <div class="dialog-system-actions"><span>Later</span><span>Quit &amp; Reopen</span></div>
+                            </div>
+                            <p>系统级行为 · 原生反馈 · 强制决策</p>
+                          </article>
+                          <article class="dialog-surface-option dialog-surface-product">
+                            <span>Copilot Product Dialog</span>
+                            <div class="dialog-specimen-window" aria-hidden="true">
+                              <strong>Delete this page?</strong>
+                              <p>This page will be gone forever on every device. Anyone you’ve shared it with will no longer be able to open it. This cannot be undone.</p>
+                              <div class="dialog-specimen-actions">
+                                <span class="dialog-specimen-destructive">Delete</span>
+                                <span class="dialog-specimen-primary">Keep</span>
+                              </div>
+                            </div>
+                            <p>产品任务 · 上下文延续 · 品牌一致性</p>
+                          </article>
+                        </div>
+                      </section>
+
+                      <section class="dialog-step reveal" aria-labelledby="dialog-types-title">
+                        <header class="dialog-step-header">
+                          <p class="design-system-label">02 · TYPE &amp; SCALE</p>
+                          <div>
+                            <h6 id="dialog-types-title">再用四种尺寸，覆盖从快速确认到复杂任务</h6>
+                            <p>尺寸不是装饰性的变化，而是由入口和任务复杂度决定：Launcher 保持轻量，主窗口承载默认任务，大尺寸 Dialog 再逐步接纳长内容、预览与更多控制。</p>
+                          </div>
+                        </header>
+                        <div class="dialog-type-scale" aria-label="Dialog 四种尺寸类型">
+                          <article class="dialog-type-example dialog-type-example-s" aria-label="S 尺寸 Dialog：麦克风权限提示">
+                            <span class="dialog-type-kicker">S</span>
+                            <div class="dialog-example-card dialog-example-card-s" aria-hidden="true">
+                              <div class="dialog-example-copy">
+                                <strong>Microphone access is off</strong>
+                                <p>I can’t hear you right now. Head to your settings to turn it on, and I’ll be ready when you are.</p>
+                              </div>
+                              <div class="dialog-example-actions"><span class="dialog-example-primary">Go to settings</span></div>
+                            </div>
+                          </article>
+
+                          <article class="dialog-type-example dialog-type-example-m" aria-label="M 尺寸 Dialog：双操作确认">
+                            <span class="dialog-type-kicker">M</span>
+                            <div class="dialog-example-card dialog-example-card-m" aria-hidden="true">
+                              <div class="dialog-example-copy">
+                                <strong>Heading</strong>
+                                <p>Lorem ipsum dolor sit amet consectetur. Tellus dictumst aliquam lectus gravida sed. Quis eget eu lectus consequat.</p>
+                              </div>
+                              <div class="dialog-example-actions">
+                                <span class="dialog-example-primary">Primary</span>
+                                <span class="dialog-example-secondary">Secondary</span>
+                              </div>
+                            </div>
+                          </article>
+
+                          <article class="dialog-type-example dialog-type-example-lv" aria-label="L Vertical 尺寸 Dialog：分享长内容">
+                            <span class="dialog-type-kicker">L · Vertical</span>
+                            <div class="dialog-example-card dialog-example-card-lv" aria-hidden="true">
+                              <strong class="dialog-example-centered-title">Share message</strong>
+                              <div class="dialog-share-preview">
+                                <div class="dialog-share-user">Show me 2 coffee shops only recommended by locals or only in my area</div>
+                                <div class="dialog-share-answer">
+                                  <p>If you’re in Mountain View, California, here are some excellent coffee shops you might want to explore:</p>
+                                  <p><b>• 1 Oz Coffee:</b> 650 Castro St. Known for good coffee, but some reviewers mention concerns about customer service.</p>
+                                  <p><b>• Red Rock Coffee:</b> 201 Castro St. Offers quality coffee and a friendly atmosphere.</p>
+                                </div>
+                                <i class="dialog-share-scrollbar"></i>
+                              </div>
+                              <div class="dialog-example-actions dialog-example-actions-lv">
+                                <span class="dialog-example-primary">Share</span>
+                                <span class="dialog-example-tertiary">Cancel</span>
+                              </div>
+                              <p class="dialog-example-disclaimer">Anyone with this link can see the entire conversation and share it with others. Please make sure the conversation doesn’t contain any sensitive content.</p>
+                            </div>
+                          </article>
+
+                          <article class="dialog-type-example dialog-type-example-lh" aria-label="L Horizontal 尺寸 Dialog：带插图的引导">
+                            <span class="dialog-type-kicker">L · Horizontal</span>
+                            <div class="dialog-example-card dialog-example-card-lh" aria-hidden="true">
+                              <div class="dialog-horizontal-illustration">
+                                <div class="dialog-browser-window dialog-browser-window-back">
+                                  <div class="dialog-browser-bar"><span></span><i></i><i></i></div>
+                                  <div class="dialog-browser-cards">
+                                    <img src="assets/dialog-image-3.png" alt="" />
+                                    <img src="assets/dialog-image.png" alt="" />
+                                  </div>
+                                </div>
+                                <div class="dialog-browser-window dialog-browser-window-front">
+                                  <div class="dialog-browser-bar"><span></span><i></i><i></i></div>
+                                  <div class="dialog-browser-pills"><i></i><i></i><i></i></div>
+                                  <div class="dialog-browser-cards">
+                                    <img src="assets/dialog-image.png" alt="" />
+                                    <img src="assets/dialog-image-1.png" alt="" />
+                                    <img src="assets/dialog-image-2.png" alt="" />
+                                  </div>
+                                </div>
+                                <div class="dialog-illustration-toolbar">
+                                  <img src="assets/dialog-icon-color.svg" alt="" />
+                                  <img src="assets/dialog-icon-color-1.svg" alt="" />
+                                  <img src="assets/dialog-icon-color-2.svg" alt="" />
+                                </div>
+                              </div>
+                              <div class="dialog-horizontal-content">
+                                <div class="dialog-example-copy">
+                                  <strong>Heading</strong>
+                                  <p>Lorem ipsum dolor sit amet consectetur. Tellus dictumst aliquam lectus gravida sed. Quis eget eu lectus consequat.</p>
+                                  <small>Privacy Statement</small>
+                                </div>
+                                <div class="dialog-example-actions">
+                                  <span class="dialog-example-primary">Primary</span>
+                                  <span class="dialog-example-secondary">Secondary</span>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                      </section>
+
+                      <section class="dialog-step reveal" aria-labelledby="dialog-responsive-title">
+                        <header class="dialog-step-header">
+                          <p class="design-system-label">03 · RESPONSIVENESS</p>
+                          <div>
+                            <h6 id="dialog-responsive-title">然后定义容器边界，再让内容在边界内伸缩</h6>
+                            <p>主窗口 Dialog 从 360px 起步、最大扩展到 640px；Launcher 固定为 380px。高度由内容决定，内部间距则根据垂直或水平结构切换，而不是整体按比例缩放。</p>
+                          </div>
+                        </header>
+                        <div class="dialog-responsive-visual">
+                          <div class="dialog-width-rules">
+                            <article>
+                              <span>Main window</span>
+                              <div><i></i></div>
+                              <p><b>360</b><b>Default / Min</b><b>640 Max</b></p>
+                            </article>
+                            <article>
+                              <span>Launcher</span>
+                              <div><i></i></div>
+                              <p><b>380</b><b>Fixed width</b><b>Content height</b></p>
+                            </article>
+                          </div>
+                          <div class="dialog-responsive-examples" aria-label="Dialog 垂直与水平结构间距规范">
+                            <figure>
+                              <img src="assets/dialog-responsive-vertical.png" alt="Dialog 垂直结构的图片区域、标题、内容、操作按钮与间距规范" loading="lazy" decoding="async" />
+                            </figure>
+                            <figure>
+                              <img src="assets/dialog-responsive-horizontal.png" alt="Dialog 水平结构的图片区域、标题、内容、控制列表、操作按钮与间距规范" loading="lazy" decoding="async" />
+                            </figure>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="dialog-step reveal" aria-labelledby="dialog-guidelines-title">
+                        <header class="dialog-step-header">
+                          <p class="design-system-label">04 · IN-PRODUCT GUIDE</p>
+                          <div>
+                            <h6 id="dialog-guidelines-title">最后，把 Dialog 的使用边界，<br />写成可复用的产品 Guide</h6>
+                            <p>Guide 依次回答三件事：当前反馈该使用哪一种组件；确认使用 Dialog 后，它是否需要阻断当前任务；最后，Dialog 里的操作应该如何分配层级。</p>
+                          </div>
+                        </header>
+                        <div class="dialog-usage-guide">
+                          <div class="dialog-usage-definitions" aria-label="Dialog 的组件选择、阻断级别与按钮层级定义">
+                            <article>
+                              <span>01 · Component choice</span>
+                              <strong>先判断反馈组件</strong>
+                              <p>根据触发者、用户行动与信息持续时间，在 Toast、Inline Dialog、Modal Dialog 与 Full-screen Message 中选择。</p>
+                              <figure class="dialog-guide-media dialog-guide-media-decision-tree">
+                                <img src="assets/dialogs-toasts-decision-tree.png" alt="Dialogs 与 Toasts 的产品应用决策树：根据触发者、任务阻断、服务状态、反馈需求与信息持续时间选择 Modal Dialog、Inline Dialog、Full-screen Message 或 Toast" loading="lazy" decoding="async" />
+                              </figure>
+                            </article>
+                            <article>
+                              <span>02 · Blocking level</span>
+                              <strong>再判断是否需要阻断</strong>
+                              <p>必须暂停任务、涉及权限或数据风险时使用 Modal；需要保留上下文时使用 Inline Dialog。</p>
+                              <figure class="dialog-guide-media dialog-guide-media-blocking">
+                                <img src="assets/dialog-blocking-level.png" alt="Copilot for Mac 中非阻断反馈 Dialog 与阻断式删除确认 Dialog 的产品应用示例" loading="lazy" decoding="async" />
+                              </figure>
+                            </article>
+                            <article>
+                              <span>03 · Action hierarchy</span>
+                              <strong>最后定义操作层级</strong>
+                              <p>每个 Dialog 只保留一个 Primary Action；可逆路径使用 Secondary；关闭为 Tertiary；不可逆风险才使用 Destructive。</p>
+                              <figure class="dialog-guide-media dialog-guide-media-actions">
+                                <img src="assets/dialog-action-hierarchy.png" alt="Dialog 中 Primary、Secondary、Tertiary 与 Destructive 按钮的使用定义和示例" loading="lazy" decoding="async" />
+                              </figure>
+                            </article>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </section>
+                </article>
+
+                <article class="design-system-example interaction-motion-example" id="design-system-interaction" aria-labelledby="interaction-motion-example-title">
+                  <h4 class="reveal" id="interaction-motion-example-title">交互动效规范</h4>
+                  <section class="interaction-motion-case">
+                    <header class="interaction-motion-intro reveal">
+                      <p class="design-system-label">FROM AUDIT TO TOKENS</p>
+                      <div>
+                        <h5>让动效从分散的参数，<br />变成共享的产品语言</h5>
+                        <p>我们从产品中已有的动效出发，审计不同 Feature、组件与窗口场景中的反馈节奏，统一 timing、easing 与行为模式；再通过关键交互验证 Motion Spec，并将共性参数沉淀为 Motion Tokens。它让产品拥有更清晰、一致的响应节奏，也为下一步 code tokenization 与规模化实现建立基础。</p>
+                      </div>
+                    </header>
+
+                    <ol class="interaction-motion-flow reveal" aria-label="从产品动效审计到代码化的工作链路">
+                      <li><span>01</span><b>Audit</b><p>审计现有动效</p></li>
+                      <li><span>02</span><b>Motion Spec</b><p>明确交互行为</p></li>
+                      <li><span>03</span><b>Motion Tokens</b><p>统一参数语言</p></li>
+                      <li><span>04</span><b>Validation</b><p>回到关键场景验证</p></li>
+                      <li><span>05</span><b>Code Tokens</b><p>支持规模化实现</p></li>
+                    </ol>
+
+                    <div class="interaction-motion-gallery" aria-label="Copilot 动效审计、规范与 Tokens">
+                      <figure class="reveal">
+                        <img src="./assets/copilot-motion-audit-board.webp" width="3578" height="1458" alt="Copilot for Mac 动效审计全景，覆盖组件、窗口与内容场景中的关键交互" loading="lazy" decoding="async" />
+                      </figure>
+                      <figure class="reveal">
+                        <img src="./assets/copilot-motion-spec-tokens.webp" width="3840" height="2160" alt="Copilot Motion Spec 与 Motion Token 体系，包含进入、退出和品牌动效的参数定义" loading="lazy" decoding="async" />
+                      </figure>
+                    </div>
+                  </section>
+                </article>
+
+                <article class="design-system-example macos-behavior-example" id="design-system-macos" aria-labelledby="macos-native-experience-title">
+                  <h4 class="reveal">macOS 原生体验</h4>
+
+                  <section class="macos-native-case">
+                    <header class="macos-native-intro reveal">
+                      <p class="design-system-label">PRODUCT REALITY</p>
+                      <div>
+                        <h5 id="macos-native-experience-title">在真实代码中构建<br />macOS 的原生体验</h5>
+                        <p>macOS 的材质、窗口和系统行为无法只靠静态视觉稿定义。设计需要进入真实代码，在 SwiftUI / AppKit 的渲染环境中验证，再把结果带回产品系统。</p>
+                      </div>
+                    </header>
+
+                    <div class="macos-native-sequence">
+                      <section class="macos-native-step macos-native-step-material reveal" aria-labelledby="macos-reality-title">
+                        <header class="macos-native-step-header">
+                          <p class="design-system-label">01 · PRODUCT REALITY</p>
+                          <div>
+                            <h6 id="macos-reality-title">先从系统材质开始，定义 Copilot 在 macOS 上的透明层级</h6>
+                            <p>macOS 26 是 Copilot for Mac 下一阶段的重要平台基线。过去一个月，我们围绕主窗口与 Settings 的框架和布局、核心组件的 Liquid Glass，以及窗口层级做了一轮系统探索；从相对实的表面逐步提高透明度，在平台一致性与 Copilot 产品语言之间定义可继续迭代的材质基础。</p>
+                          </div>
+                        </header>
+
+                        <figure class="macos-material-spectrum">
+                          <img src="./assets/copilot-macos-material-spectrum.webp" alt="Copilot for Mac 材质光谱：从 Sidebar、Button、Composer、Voice Control、Player、Launcher，到 Notification、Flyout Menu、Dialog、Companion Window 与 App Window，逐步定义窗口和组件的透明层级" loading="lazy" decoding="async" />
+                        </figure>
+
+                        <div class="macos-material-exploration-gallery" aria-label="macOS 26 材质探索与应用示例">
+                          <figure>
+                            <img src="./assets/copilot-macos-material-application.webp" alt="Copilot for Mac 在 macOS 26 Liquid Glass 环境中的产品应用示例，展示主窗口、Sidebar、Gallery、Companion Window 与 Composer 的材质关系" loading="lazy" decoding="async" />
+                          </figure>
+                          <figure>
+                            <img src="./assets/copilot-macos26-exploration-board.webp" alt="Copilot for Mac 的 macOS 26 设计语言探索全景，包含核心页面、组件、窗口形态与原生应用参考" loading="lazy" decoding="async" />
+                          </figure>
+                        </div>
+
+                        <div class="macos-build-bridge">
+                          <div>
+                            <h6>但设计稿里的材质，不等于真实 Build 中的结果</h6>
+                            <p>同一套透明度与层级定义，在 Figma 与 SwiftUI / AppKit 的真实渲染中仍会受到系统材质、原生控件和背景内容影响，因此需要继续并排验证。</p>
+                          </div>
+                        </div>
+
+                        <div class="macos-build-comparison" aria-label="Figma 设计稿与真实开发 Build 对比">
+                          <figure>
+                            <figcaption><span>Design</span><b>Figma intent</b></figcaption>
+                            <img src="./assets/macos-material-design.png" alt="Figma 中的 Copilot for Mac 材质设计稿" loading="lazy" decoding="async" />
+                          </figure>
+                          <figure>
+                            <figcaption><span>Build</span><b>Native rendering</b></figcaption>
+                            <img src="./assets/macos-material-build.png" alt="真实开发 Build 中的 Copilot for Mac 界面" loading="lazy" decoding="async" />
+                          </figure>
+                        </div>
+                      </section>
+
+                      <section class="macos-native-step reveal" aria-labelledby="macos-material-gap-title">
+                        <header class="macos-native-step-header">
+                          <p class="design-system-label">02 · THE MATERIAL GAP</p>
+                          <div>
+                            <h6 id="macos-material-gap-title">Liquid Glass 不是一个可被静态稿完整描述的视觉值</h6>
+                            <p>macOS 26 的折射、模糊、色彩与背景内容会共同改变材质结果。只有在原生 API 中切换参数、观察窗口背后的真实内容，才能判断材质是否清晰、可读，并符合平台预期。</p>
+                          </div>
+                        </header>
+
+                        <figure class="macos-material-gap-visual">
+                          <img src="./assets/macos-material-gap.png" alt="在真实 Copilot Build 中调试 Liquid Glass 材质参数" loading="lazy" decoding="async" />
+                          <figcaption>
+                            <span>Native material lab</span>
+                            <p>把折射、深度、色散与 Frost 放进真实内容上验证，而不是用一张静态图片模拟最终效果。</p>
+                          </figcaption>
+                        </figure>
+                      </section>
+
+                      <section class="macos-native-step reveal" aria-labelledby="macos-old-way-title">
+                        <header class="macos-native-step-header">
+                          <p class="design-system-label">03 · THE OLD WAY</p>
+                          <div>
+                            <h6 id="macos-old-way-title">传统交付让材质问题，在最后一轮才被看见</h6>
+                            <p>设计、标注、开发与 Review 彼此串联。任何原生渲染差异都会回到流程起点，时间越紧，设计意图越容易在来回妥协中被稀释。</p>
+                          </div>
+                        </header>
+
+                        <ol class="macos-handoff-flow" aria-label="传统设计交付与回归流程">
+                          <li><span>01</span><strong>Figma</strong><p>定义视觉意图</p></li>
+                          <li><span>02</span><strong>Handoff</strong><p>补充标注和参数</p></li>
+                          <li><span>03</span><strong>Build</strong><p>开发实现原生效果</p></li>
+                          <li><span>04</span><strong>Review</strong><p>发现差异后返回修改</p></li>
+                        </ol>
+                      </section>
+
+                      <section class="macos-native-step macos-design-direct reveal" aria-labelledby="macos-design-direct-title">
+                        <header class="macos-native-step-header">
+                          <p class="design-system-label">04 · DESIGN DIRECT</p>
+                          <div>
+                            <h6 id="macos-design-direct-title">不只描述改变，<br />而是直接把它构建出来</h6>
+                            <p>我在 VS Code 中调用 Apple 的 Liquid Glass API，把多个材质方案放进真实 Copilot Build 进行 A/B 验证，并通过 PR 直接交付可运行的设计结果。</p>
+                          </div>
+                        </header>
+
+                        <div class="macos-design-direct-proof">
+                          <figure class="macos-liquid-build">
+                            <video data-native-material-video muted playsinline preload="metadata" aria-label="在真实 Copilot Build 中切换 Liquid Glass 材质方案">
+                              <source src="./assets/macos-liquid-glass-build.mp4" type="video/mp4" />
+                            </video>
+                            <figcaption><span>Build in code</span><b>Native API · Live validation</b></figcaption>
+                          </figure>
+                          <figure class="macos-pr-proof">
+                            <img src="./assets/macos-material-pr.png" alt="在 VS Code 中完成 Liquid Glass 实现并通过 PR 交付" loading="lazy" decoding="async" />
+                            <figcaption><span>Ship through PR</span><b>Design intent · Runnable result</b></figcaption>
+                          </figure>
+                        </div>
+                      </section>
+                    </div>
+                  </section>
+                </article>
+
+              </div>
+            </div>
+
+            <footer class="design-system-value reveal" id="design-system-reflection">
+              <p class="design-system-label">REFLECTION</p>
+              <h4 class="design-system-learning-title">从搭建产品基础，<br />到思考 AI 时代的 Design System</h4>
+              <p class="design-system-reflection-answer">这个项目从 Framework、Components、Motion 与 macOS 原生体验四类产品基础开始，解决不同 Feature 如何共享同一套体验。当 AI 开始参与构建界面，系统还需要进一步把这些经验转译为 AI 可以理解和执行的设计判断。<strong>真正稀缺的不再只是组件，而是何时使用、为什么这样选择，以及如何验证。</strong></p>
+              <ol class="design-system-reflection-lessons" aria-label="项目反思">
+                <li>
+                  <span>01</span>
+                  <div class="design-system-reflection-content">
+                    <em>WHAT</em>
+                    <strong>把项目成果沉淀为可调用的基础</strong>
+                    <p>先让 AI 知道产品中有哪些稳定资产。</p>
+                    <ul class="design-system-reflection-points">
+                      <li>Framework、Components 与 Patterns</li>
+                      <li>macOS 材质、交互状态与 Accessibility</li>
+                      <li>Motion Tokens、品牌语言与体验原则</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <span>02</span>
+                  <div class="design-system-reflection-content">
+                    <em>WHEN &amp; WHY</em>
+                    <strong>把产品判断写进系统</strong>
+                    <p>再让 AI 理解何时使用，以及为什么这样选择。</p>
+                    <ul class="design-system-reflection-points">
+                      <li>以 Dialog Guide 说明适用场景与使用边界</li>
+                      <li>用阻断级别与操作层级表达决策逻辑</li>
+                      <li>把用户任务、风险与设计意图写进规则</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <span>03</span>
+                  <div class="design-system-reflection-content">
+                    <em>HOW</em>
+                    <strong>让规则可执行，也可被验证</strong>
+                    <p>最后，把规范带进生成、实现与检查流程。</p>
+                    <ul class="design-system-reflection-points">
+                      <li>把 Design Rules 与 Skills 转成机器可读的约束</li>
+                      <li>基于真实组件，在代码中构建与调整 UI</li>
+                      <li>自动检查一致性、可访问性与交互质量，保留人工审核</li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+              <p class="design-system-reflection-conclusion">未来的 Design System 不只是 Component Library，而是一套让 AI 能够 <strong>Understand → Decide → Build &amp; Validate</strong> 的设计决策系统。</p>
+            </footer>
+          </div>
+        </section>
+      </section>
+
+      <section class="case-next" aria-label="案例结束">
+        <p>Thanks for reading · 2026</p>
+        <h2>复杂的系统，<br /><em>也可以清楚地工作</em></h2>
+        <div>
+          <a href="./index.html#work"><span>←</span> 返回所有项目</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="case-footer">
+      <span>YUCHEN'S FOLIO · COPILOT FOR MAC</span>
+      <a href="#case-main">回到顶部 ↑</a>
+    </footer>
+
+    <dialog class="image-lightbox" data-image-lightbox aria-label="图片放大预览">
+      <button class="image-lightbox-close" type="button" data-image-lightbox-close aria-label="关闭图片预览">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="image-lightbox-stage">
+        <img data-image-lightbox-image alt="" />
+      </div>
+    </dialog>
+
+    <script src="./script.js"></script>
+    <script src="./copilot-mac.js"></script>
+  </body>
+</html>
