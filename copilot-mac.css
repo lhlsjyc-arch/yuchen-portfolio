@@ -2180,6 +2180,11 @@
   line-height: 1.65;
 }
 
+.case-page .dialog-components-overview {
+  border: 1px solid rgba(72, 51, 34, 0.08);
+  box-shadow: 0 24px 70px rgba(72, 51, 34, 0.08);
+}
+
 .case-page .dialog-case-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -3249,6 +3254,10 @@
   border-top: 1px solid var(--hairline);
 }
 
+.case-page .macos-design-direct {
+  border-top: 0;
+}
+
 .case-page .macos-native-step-header h6 {
   max-width: 780px;
   margin: 0;
@@ -3968,6 +3977,104 @@
 .case-page .material-system-content i:nth-child(2) { width: 76%; }
 .case-page .material-system-content i:nth-child(3) { width: 54%; }
 
+/* Typography system — from CMC rules to native macOS readability */
+
+.case-page .typography-case {
+  display: grid;
+  gap: clamp(48px, 6vw, 80px);
+}
+
+.case-page .typography-case-header {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.32fr) minmax(0, 1fr);
+  gap: clamp(40px, 7vw, 110px);
+  align-items: start;
+}
+
+.case-page .typography-case-header > div {
+  max-width: 820px;
+}
+
+.case-page .typography-case-header h4 {
+  max-width: 760px;
+  margin: 0;
+  font-family: var(--copilot-display);
+  font-size: clamp(38px, 4.6vw, 64px);
+  font-weight: 610;
+  letter-spacing: -0.058em;
+  line-height: 1.01;
+}
+
+.case-page .typography-case-header > div > p {
+  max-width: 720px;
+  margin: 30px 0 0;
+  color: var(--text-secondary);
+  font-size: clamp(15px, 1.25vw, 17px);
+  line-height: 1.75;
+}
+
+.case-page .typography-outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  list-style: none;
+}
+
+.case-page .typography-outcomes li {
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  padding: 22px clamp(18px, 2.3vw, 30px) 26px;
+}
+
+.case-page .typography-outcomes li + li {
+  border-left: 1px solid var(--hairline);
+}
+
+.case-page .typography-outcomes span {
+  margin-bottom: clamp(34px, 3vw, 46px);
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.case-page .typography-outcomes strong {
+  font-size: clamp(19px, 1.8vw, 24px);
+  font-weight: 590;
+  letter-spacing: -0.035em;
+}
+
+.case-page .typography-outcomes p {
+  max-width: 250px;
+  margin: 10px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.case-page .typography-gallery {
+  display: grid;
+  gap: clamp(24px, 3.5vw, 46px);
+}
+
+.case-page .typography-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: clamp(16px, 2vw, 28px);
+  background: #e9e5e2;
+  box-shadow: 0 18px 46px rgba(29, 29, 31, 0.055);
+}
+
+.case-page .typography-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .case-page .design-system-value {
   position: relative;
   left: 50%;
@@ -4390,6 +4497,10 @@
   .case-page .macos-handoff-flow li:nth-child(3) { border-left: 0; }
   .case-page .macos-handoff-flow li:nth-child(n + 3) { border-top: 1px solid var(--hairline); }
   .case-page .macos-handoff-flow li:nth-child(2)::after { display: none; }
+  .case-page .typography-case-header {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
   .case-page .design-system-application-grid { grid-template-columns: 1fr; gap: 70px; }
   .case-page .design-system-application-visual { aspect-ratio: 1.8; }
   .case-page .design-system-application > p { max-width: 560px; }
@@ -4514,6 +4625,15 @@
   .case-page .design-system-layers h4 { margin-top: auto; }
   .case-page .design-system-layers p { min-height: 0; }
   .case-page .design-system-examples { margin-top: 34px; }
+  .case-page .typography-case { gap: 38px; }
+  .case-page .typography-case-header h4 { font-size: clamp(34px, 10vw, 46px); }
+  .case-page .typography-case-header > div > p { margin-top: 22px; font-size: 15px; }
+  .case-page .typography-outcomes { grid-template-columns: 1fr; }
+  .case-page .typography-outcomes li { min-height: 132px; padding: 20px; }
+  .case-page .typography-outcomes span { margin-bottom: 22px; }
+  .case-page .typography-outcomes li + li { border-top: 1px solid var(--hairline); border-left: 0; }
+  .case-page .typography-gallery { gap: 22px; }
+  .case-page .typography-gallery figure { border-radius: 16px; }
   .case-page .design-system-example {
     gap: 42px;
     padding-bottom: 96px;

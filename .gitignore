@@ -9,3 +9,9 @@ bing-app.html
 bing-app.css
 bing-app.js
 bing-app.bundle.js
+
+# Local design review and browser-check artifacts.
+.impeccable/
+.review/
+.taste-skill/
+shots/

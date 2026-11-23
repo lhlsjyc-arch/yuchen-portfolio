@@ -30,29 +30,6 @@
   --yc-shadow: 0 32px 90px rgba(0, 0, 0, 0.32);
 }
 
-.yc-page .site-header {
-  color: var(--yc-ink);
-  background: color-mix(in srgb, var(--yc-paper) 82%, transparent);
-}
-
-.yc-page .reading-progress {
-  position: absolute;
-  right: 0;
-  bottom: -1px;
-  left: 0;
-  height: 2px;
-  overflow: hidden;
-}
-
-.yc-page .reading-progress i {
-  width: 100%;
-  height: 100%;
-  display: block;
-  background: var(--yc-acid);
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
 .yc-section-index {
   margin: 0;
   font-family: var(--mono);

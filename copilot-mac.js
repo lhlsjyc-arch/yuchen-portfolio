@@ -164,7 +164,7 @@ function initProductOverviewDome() {
 
     const image = document.createElement("img");
     image.src = imagePaths[imageIndex];
-    image.alt = `Copilot for Mac 产品界面 ${String(imageIndex + 1).padStart(2, "0")}`;
+    image.alt = `Copilot Mac 产品界面 ${String(imageIndex + 1).padStart(2, "0")}`;
     image.width = 1420;
     image.height = 1000;
     image.decoding = "async";

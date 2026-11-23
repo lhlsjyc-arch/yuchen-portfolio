@@ -9,17 +9,24 @@
     />
     <title>井雨晨｜产品设计作品集</title>
     <link rel="preload" as="image" type="image/png" href="./assets/portrait-head-front.png" fetchpriority="high" />
-    <link rel="stylesheet" href="./styles.css?v=header-menu-1" />
+    <link rel="stylesheet" href="./styles.css?v=contact-qr-3d-2" />
   </head>
   <body>
     <a class="skip-link" href="#work">跳到项目</a>
 
+    <div class="collab-cursor" aria-hidden="true" data-highlight-cursor>
+      <svg viewBox="0 0 24 24" width="22" height="22" focusable="false">
+        <path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z" fill="currentColor" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"></path>
+      </svg>
+      <span data-highlight-cursor-label>You</span>
+    </div>
+
     <header class="site-header">
       <nav class="desktop-nav" aria-label="主导航">
-        <a href="#about">简介</a>
+        <a href="#top">首页</a>
+        <a href="#resume">简历</a>
         <a href="#work">项目</a>
-        <a href="#project-lab">实验</a>
-        <a href="#contact">联系</a>
+        <a href="#contact">联系方式</a>
       </nav>
 
       <div class="header-actions">
@@ -30,10 +37,10 @@
       </div>
 
       <nav class="mobile-menu" id="mobile-menu" aria-label="移动端导航" hidden>
-        <a href="#about">01 · 简介</a>
-        <a href="#work">02 · 项目</a>
-        <a href="#project-lab">03 · 实验</a>
-        <a href="#contact">04 · 联系</a>
+        <a href="#top">01 · 首页</a>
+        <a href="#resume">02 · 简历</a>
+        <a href="#work">03 · 项目</a>
+        <a href="#contact">04 · 联系方式</a>
       </nav>
     </header>
 
@@ -79,107 +86,267 @@
 
       <section class="statement" id="statement" aria-label="个人陈述" data-scroll-screen>
         <div class="statement-inner">
-          <div class="collab-cursor" aria-hidden="true"><i></i><span>You</span></div>
           <p class="statement-copy reveal">
-            嗨，我是雨晨 👋 我把复杂的 AI 系统，设计成大家真正愿意理解和使用的体验 👀 做过
-            <a class="profile-pill" href="#project-copilot"><b class="profile-icon">CO</b>Copilot for Mac</a>
-            的桌面系统 💻 也在生成式 AI 进入大众产品的早期，重新想象
-            <a class="profile-pill" href="#project-motion"><b class="profile-icon">↝</b>Bing App</a>
-            ✨ 也为中国市场梳理
-            <a class="profile-pill profile-pill-dark" href="#project-search"><b class="profile-icon">问</b>AI Search</a>
-            的信任与本地化边界 🔎 此前，我做过
-            <span class="profile-pill"><b class="profile-icon">研</b>4 城市用户研究</span>
-            🧠 也让一个音乐产品的播放量提升了
-            <span class="profile-pill profile-pill-dark"><b class="profile-icon">↗</b>33%</span>
-            📈 十二年里，我从动画走到心理学，再走进 AI 产品，只记住一件事：把复杂的事做清楚，也真正做出来 🧘
+            嗨，我是雨晨 <span class="statement-emoji" aria-hidden="true">👋</span> 一名专注 AI 产品体验的产品设计师。自 2021 年加入微软，我先后参与
+            <a class="profile-pill" href="#project-motion" data-cursor-label="查看项目" style="--profile-preview: url('./assets/bing-app-cover.webp'); --profile-icon-position: 16% center">
+              <img class="profile-icon" src="./assets/bing-app-cover.webp" alt="" width="480" height="300" loading="lazy" />Bing App
+            </a>
+            移动端 GenSERP 与增长体验，负责
+            <a class="profile-pill profile-pill-dark" href="#project-copilot" data-cursor-label="查看项目" style="--profile-preview: url('./assets/copilot-mac-design-system-poster.webp'); --profile-icon-position: center">
+              <img class="profile-icon" src="./assets/copilot-mac-design-system-poster.webp" alt="" width="480" height="270" loading="lazy" />Copilot Mac
+            </a>
+            桌面体验与设计系统，并作为 Bing Growth（China）设计 Owner 推动 China AI Landing 等项目落地 <span class="statement-emoji" aria-hidden="true">👀</span> 工作之外，我正在打造
+            <a class="profile-pill" href="#project-lab" data-cursor-label="查看项目" style="--profile-preview: url('./assets/yc-dashboard-home.webp'); --profile-icon-position: 11% center">
+              <img class="profile-icon" src="./assets/yc-dashboard-home.webp" alt="" width="480" height="300" loading="lazy" />YC WorkBuddy
+            </a>
+            <span class="statement-emoji" aria-hidden="true">🧪</span>，探索个人 AI 工具如何进入真实工作流。应用心理学 <span class="statement-emoji" aria-hidden="true">🧠</span> 与动画 <span class="statement-emoji" aria-hidden="true">🎞️</span> 的背景，让我既关注系统逻辑，也重视用户的理解、情绪与感受 <span class="statement-emoji" aria-hidden="true">🧘</span>。
           </p>
           <nav class="statement-actions reveal" aria-label="个人陈述快捷入口">
-            <a href="#work">查看项目</a>
-            <a href="#project-copilot">看我怎么做</a>
-            <a href="#contact">聊聊合作</a>
+            <a href="#work" data-cursor-label="前往项目">查看项目</a>
+            <a href="#contact" data-cursor-label="前往联系">联系我</a>
           </nav>
         </div>
       </section>
 
-      <section class="career-screen" aria-labelledby="career-title" data-scroll-screen>
-        <div class="screen-inner">
-          <section class="career-timeline reveal">
-            <header class="career-timeline-header">
-              <div>
-                <p class="career-kicker">EXPERIENCE · 2014—NOW</p>
-                <h2 id="career-title">一路做过的事<span>。</span></h2>
-              </div>
-            </header>
+      <section class="career-screen" id="resume" aria-labelledby="career-title" data-scroll-screen data-scroll-long>
+        <div class="resume-shell">
+          <header class="resume-hero reveal">
+            <div class="resume-heading">
+              <h2 id="career-title">工作经历</h2>
+              <p class="resume-period">2014 - NOW</p>
+              <p class="resume-caption">PROFESSIONAL JOURNEY</p>
+            </div>
+          </header>
 
-            <ol class="career-list">
-              <li class="career-item career-item-current">
-                <p class="career-date">2021.06—NOW <span>现在</span></p>
-                <h3>微软 STCA</h3>
-                <p class="career-role">产品设计师</p>
-                <p class="career-result">覆盖 Bing App、Copilot for Mac 与 AI Search，推进设计系统、动效和真实 Build 落地。</p>
-              </li>
-              <li class="career-item">
-                <p class="career-date">2018.05—2019.10</p>
-                <h3>站酷创意科技</h3>
-                <p class="career-role">UI 设计师</p>
-                <p class="career-result">独立完成高高手移动端与 Web 端从 0 到 1 的界面改版。</p>
-              </li>
-              <li class="career-item">
-                <p class="career-date">2016.11—2018.05</p>
-                <h3>太合音乐 · 百度音乐人</h3>
-                <p class="career-role">视觉设计师</p>
-                <p class="career-result">持续迭代 Web 与 App，相关功能上线后播放量提升 33%。</p>
-              </li>
-              <li class="career-item">
-                <p class="career-date">2014.09—2016.10</p>
-                <h3>和光创世</h3>
-                <p class="career-role">平面设计师</p>
-                <p class="career-result">从品牌视觉与内容表达出发，开启设计职业生涯。</p>
-              </li>
-            </ol>
-            <div class="education-branch reveal">
-              <div class="education-heading">
-                <p class="career-kicker">EDUCATION · 2010—2022</p>
-                <h3 id="education-title">学习经历</h3>
+          <ol class="experience-list reveal" aria-label="工作经历列表">
+            <li class="experience-item is-open">
+              <div class="experience-row">
+                <span class="experience-index" aria-hidden="true">/01</span>
+                <time class="experience-date" datetime="2021">2021—至今</time>
+                <div class="experience-copy">
+                  <h3>微软 STCA</h3>
+                  <p class="experience-role">产品设计师 · Bing Growth（China）设计 Owner</p>
+                  <p class="experience-summary">自 2021 年起负责 Bing App、Copilot Mac 与 Bing Growth（China）等跨端产品的用户增长、基础体验与设计系统建设。</p>
+                </div>
+                <button class="experience-toggle" type="button" aria-expanded="true" aria-controls="experience-microsoft">
+                  <span class="visually-hidden">收起微软 STCA 详细经历</span>
+                  <span class="experience-toggle-symbol" aria-hidden="true"></span>
+                </button>
               </div>
-              <ul class="education-list">
+              <div class="experience-panel" id="experience-microsoft">
+                <div class="experience-panel-inner experience-panel-inner--timeline">
+                  <div class="microsoft-projects" aria-label="微软项目时间线">
+                    <article class="microsoft-project" aria-labelledby="microsoft-project-growth">
+                      <time class="microsoft-project-time" datetime="2026-07">2026.07—至今</time>
+                      <div class="microsoft-project-copy">
+                        <h4 id="microsoft-project-growth">Bing Growth（China）</h4>
+                        <ul class="microsoft-project-points">
+                          <li>作为 Bing Growth（China）设计 Owner，独立负责 Chinese Keyboard、China AI Landing、Bing Screensaver 与 Bing Blogs 等项目的端到端体验设计，覆盖需求梳理、体验策略、交互与视觉设计、原型验证、设计系统适配、研发协作及上线 QA，推动多个产品从概念走向落地。</li>
+                          <li>作为 Bing China 中秋活动项目 Owner，借助 AI 辅助编程直接参与产品构建，在一周内完成并上线 5 款互动小游戏及整套活动视觉资产，并持续推进上线后的体验优化。</li>
+                        </ul>
+                      </div>
+                    </article>
+
+                    <article class="microsoft-project" aria-labelledby="microsoft-project-copilot">
+                      <time class="microsoft-project-time" datetime="2025-08">2025.08—2026.06</time>
+                      <div class="microsoft-project-copy">
+                        <h4 id="microsoft-project-copilot">Copilot Mac</h4>
+                        <ul class="microsoft-project-points">
+                          <li>负责 Copilot Mac 产品基础体验建设，围绕持续扩展的 AI 功能，从产品框架、组件系统、交互动效与 macOS 原生体验四个方向建立一致、可复用的设计基础。</li>
+                          <li>定义窗口与页面层级、主窗口结构及响应式规则；从真实 Feature 中提炼 Dialog 等共享组件，形成尺寸、容器、阻断级别与操作层级的使用规范。</li>
+                          <li>审计不同 Feature、组件与窗口场景的动效，统一 timing、easing 与行为模式，沉淀 Motion Spec 与 Motion Tokens。</li>
+                          <li>围绕 macOS 26 Liquid Glass，在 SwiftUI / AppKit 真实渲染环境中验证材质、窗口与系统行为；在真实 Copilot Build 中完成多方案 A/B 验证，并通过 PR 直接交付可运行的设计结果。</li>
+                        </ul>
+                      </div>
+                    </article>
+
+                    <article class="microsoft-project" aria-labelledby="microsoft-project-bing-app">
+                      <time class="microsoft-project-time" datetime="2021-06">2021.06—2025.07</time>
+                      <div class="microsoft-project-copy">
+                        <h4 id="microsoft-project-bing-app">Bing App</h4>
+                        <ul class="microsoft-project-points">
+                          <li>负责 Bing App 增长与核心体验设计，参与 Rewards、Smart Camera、Wallpaper 等功能，通过用户流程、高保真界面、交互原型与动效支持业务转化，并确保多项并行需求的体验一致性。</li>
+                          <li>与资深设计师协作，通过重组信息呈现方式优化移动端 GenSERP；方案经用户体验实验室测试，首次获得绿色 WPSBS 评分。</li>
+                          <li>负责移动端体验优化专项，与 5 名工程师和 1 名项目经理协作，通过交互与界面优化提升整体使用体验，推动关键更新落地。</li>
+                          <li>参与 Bing App Design System 的建设与持续完善，重点负责 Snackbar、响应式规则、Tooltip 和列表等内容，沉淀可复用的视觉与交互规范。</li>
+                          <li>建立动效设计体系并制作规范模板，使用 Figma 和 After Effects 输出交互原型与演示，提升设计与研发的协作效率及落地一致性。</li>
+                        </ul>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="experience-item">
+              <div class="experience-row">
+                <span class="experience-index" aria-hidden="true">/02</span>
+                <time class="experience-date" datetime="2018">2018—2019</time>
+                <div class="experience-copy">
+                  <h3>站酷创意科技</h3>
+                  <p class="experience-role">UI 设计师</p>
+                  <p class="experience-summary">主导站酷社区体验优化，独立负责教育产品界面设计，并维护一致的产品设计语言。</p>
+                </div>
+                <button class="experience-toggle" type="button" aria-expanded="false" aria-controls="experience-zcool">
+                  <span class="visually-hidden">展开站酷创意科技详细经历</span>
+                  <span class="experience-toggle-symbol" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="experience-panel" id="experience-zcool" inert>
+                <div class="experience-panel-inner">
+                  <div class="experience-overview">
+                    <p class="experience-label">工作内容</p>
+                    <p>推动站酷社区产品的用户体验优化和上线，独立完成教育产品的界面设计与可用性改进，并参与设计系统维护。</p>
+                    <ul class="experience-tags" aria-label="站酷经历关键词">
+                      <li>社区产品</li>
+                      <li>教育产品</li>
+                      <li>可用性优化</li>
+                      <li>设计系统</li>
+                    </ul>
+                  </div>
+                  <div class="experience-duties">
+                    <p class="experience-label">主要项目</p>
+                    <ol>
+                      <li>站酷高高手从 0 到 1</li>
+                      <li>海洛音乐落地页设计</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="experience-item">
+              <div class="experience-row">
+                <span class="experience-index" aria-hidden="true">/03</span>
+                <time class="experience-date" datetime="2016">2016—2018</time>
+                <div class="experience-copy">
+                  <h3>太合音乐 · 百度音乐人</h3>
+                  <p class="experience-role">视觉设计师</p>
+                  <p class="experience-summary">负责百度音乐产品界面迭代，以及运营专题、焦点图与艺人专辑封面的视觉设计。</p>
+                </div>
+                <button class="experience-toggle" type="button" aria-expanded="false" aria-controls="experience-taihe">
+                  <span class="visually-hidden">展开太合音乐详细经历</span>
+                  <span class="experience-toggle-symbol" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="experience-panel" id="experience-taihe" inert>
+                <div class="experience-panel-inner">
+                  <div class="experience-overview">
+                    <p class="experience-label">工作内容</p>
+                    <p>持续迭代百度音乐 Web 与 App 界面，支持运营专题和焦点图设计，并与市场同事对接艺人专辑需求。</p>
+                    <ul class="experience-tags" aria-label="太合音乐经历关键词">
+                      <li>产品界面</li>
+                      <li>运营设计</li>
+                      <li>专辑视觉</li>
+                      <li>跨团队协作</li>
+                    </ul>
+                  </div>
+                  <div class="experience-duties">
+                    <p class="experience-label">主要项目</p>
+                    <ol>
+                      <li>百度音乐 Web / App 界面改版</li>
+                      <li>运营专题活动页与焦点图</li>
+                      <li>艺人专辑封面设计</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="experience-item">
+              <div class="experience-row">
+                <span class="experience-index" aria-hidden="true">/04</span>
+                <time class="experience-date" datetime="2014">2014—2016</time>
+                <div class="experience-copy">
+                  <h3>和光创世文化传媒</h3>
+                  <p class="experience-role">平面设计师</p>
+                  <p class="experience-summary">负责宣传海报及其他平面视觉设计，与各部门协作完成设计需求和视觉优化。</p>
+                </div>
+                <button class="experience-toggle" type="button" aria-expanded="false" aria-controls="experience-heguang">
+                  <span class="visually-hidden">展开和光创世详细经历</span>
+                  <span class="experience-toggle-symbol" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="experience-panel" id="experience-heguang" inert>
+                <div class="experience-panel-inner">
+                  <div class="experience-overview">
+                    <p class="experience-label">工作内容</p>
+                    <p>以海报和品牌传播物料为主要载体，响应跨部门设计需求并完成视觉优化与交付。</p>
+                    <ul class="experience-tags" aria-label="和光创世经历关键词">
+                      <li>海报设计</li>
+                      <li>品牌视觉</li>
+                      <li>平面设计</li>
+                    </ul>
+                  </div>
+                  <div class="experience-duties">
+                    <p class="experience-label">工作职责</p>
+                    <ol>
+                      <li>宣传海报与平面视觉物料设计</li>
+                      <li>跨部门沟通、设计交付与视觉优化</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+
+          <section class="resume-background reveal" aria-labelledby="education-title">
+            <div class="resume-education">
+              <h3 id="education-title">教育背景</h3>
+              <ol class="education-list">
                 <li class="education-item">
-                  <p class="education-date">2020.09—2022.06</p>
-                  <h4>北京师范大学</h4>
-                  <p>应用心理学硕士 · 用户体验方向</p>
+                  <time datetime="2020">2020—2022</time>
+                  <div>
+                    <h4>北京师范大学 · 心理学部</h4>
+                    <p>应用心理学硕士 · 用户体验方向</p>
+                    <ul class="education-tags" aria-label="北京师范大学课程">
+                      <li>认知心理学</li><li>用户研究</li><li>可用性测试</li><li>用户体验概论</li><li>服务设计</li>
+                    </ul>
+                  </div>
                 </li>
                 <li class="education-item">
-                  <p class="education-date">2013.09—2014.01</p>
-                  <h4>国立台湾师范大学</h4>
-                  <p>视觉传达交换生</p>
+                  <time datetime="2013">2013—2014</time>
+                  <div>
+                    <h4>国立台湾师范大学 · 艺术设计学院</h4>
+                    <p>艺术设计交换生</p>
+                    <ul class="education-tags" aria-label="国立台湾师范大学课程">
+                      <li>色彩设计</li><li>视听语言</li><li>创意设计</li><li>3D 软件设计</li>
+                    </ul>
+                  </div>
                 </li>
                 <li class="education-item">
-                  <p class="education-date">2010.09—2014.06</p>
-                  <h4>北京服装学院</h4>
-                  <p>动画专业学士</p>
+                  <time datetime="2010">2010—2014</time>
+                  <div>
+                    <h4>北京服装学院 · 艺术设计学院</h4>
+                    <p>新媒体动画专业学士</p>
+                    <ul class="education-tags" aria-label="北京服装学院课程">
+                      <li>动画运动规律</li><li>网页设计</li><li>多媒体广告设计</li><li>动画创作与研究</li>
+                    </ul>
+                  </div>
                 </li>
-              </ul>
+              </ol>
             </div>
           </section>
         </div>
       </section>
 
+      <div class="project-progress" aria-live="polite" aria-label="当前项目 01 /03">
+        <strong data-project-current>01</strong><span>/03</span>
+      </div>
+
       <section class="work" id="work" aria-label="精选项目">
-        <div class="project-progress" aria-live="polite" aria-label="当前项目">
-          <strong data-project-current>01</strong><span>/04</span>
-        </div>
         <div class="project-stack">
           <section class="project-slide" data-project-slide="01" data-scroll-screen aria-labelledby="project-story-01">
           <header class="project-story reveal">
             <p>DESKTOP PRODUCT</p>
             <div>
-              <h3 id="project-story-01">构建体验基础</h3>
+              <h3 id="project-story-01">让体验质量，<br />跟上 AI 产品的演进速度</h3>
             </div>
           </header>
           <article class="project-card project-copilot" id="project-copilot" data-project="01">
             <div class="project-copy">
               <p class="project-type">MICROSOFT · 2025.08—2026.06</p>
-              <h4>Copilot for Mac</h4>
+              <h4>Copilot Mac</h4>
               <p class="project-summary">从产品框架、组件、动效与 macOS 原生体验出发，为持续扩展的功能建立一致、可复用的体验基础。</p>
               <ul class="project-tags" aria-label="项目关键词">
                 <li>产品框架定义</li>
@@ -189,7 +356,7 @@
               </ul>
               <a class="project-link" href="./copilot-mac.html">查看完整案例 <span>→</span></a>
             </div>
-            <div class="project-visual project-visual-copilot" aria-label="Copilot for Mac 产品界面">
+            <div class="project-visual project-visual-copilot" aria-label="Copilot Mac 产品界面">
               <video
                 class="copilot-product-video"
                 data-project-video
@@ -197,7 +364,7 @@
                 playsinline
                 preload="metadata"
                 poster="./assets/copilot-mac-design-system-poster.webp"
-                aria-label="Copilot for Mac Design System 演示"
+                aria-label="Copilot Mac Design System 演示"
               >
                 <source src="./assets/copilot-mac-design-system.mp4" type="video/mp4" />
               </video>
@@ -207,20 +374,20 @@
 
           <section class="project-slide" data-project-slide="02" data-scroll-screen aria-labelledby="project-story-02">
           <header class="project-story reveal">
-            <p>REIMAGINING SEARCH</p>
+            <p>MOBILE PRODUCT EXPERIENCE</p>
             <div>
-              <h3 id="project-story-02">在 AI 时代，<br />重新想象搜索</h3>
+              <h3 id="project-story-02">重塑 Bing App，<br />探索 AI 时代的搜索</h3>
             </div>
           </header>
           <article class="project-card project-motion" id="project-motion" data-project="02">
             <div class="project-copy">
-              <p class="project-type">MICROSOFT · 2024 Q4—2025 Q1</p>
+              <p class="project-type">MICROSOFT · 2021.06—2025.07</p>
               <h4>Bing App</h4>
-              <p class="project-summary">在生成式 AI 刚刚进入大众产品的阶段，重新想象 Bing App：让搜索不再只是返回结果，而是理解问题、组织答案，并陪伴用户继续探索。</p>
+              <p class="project-summary">Bing App 将搜索、AI 内容发现、网页浏览与 Rewards 等能力汇集于同一个移动产品，并通过统一的信息结构、交互与反馈，让持续增加的功能保持清晰、连贯。</p>
               <ul class="project-tags" aria-label="项目关键词">
-                <li>AI-native Search</li>
-                <li>探索与发现</li>
-                <li>移动端体验</li>
+                <li>Mobile GenSERP</li>
+                <li>Growth Experience</li>
+                <li>Design System</li>
               </ul>
               <a class="project-link" href="./bing-figma-embed.html">查看完整案例 <span>→</span></a>
             </div>
@@ -232,77 +399,259 @@
 
           <section class="project-slide" data-project-slide="03" data-scroll-screen aria-labelledby="project-story-03">
           <header class="project-story reveal">
-            <p>LOCAL TRUST</p>
+            <p>PERSONAL AI WORKSPACE</p>
             <div>
-              <h3 id="project-story-03">把本地化，<br />做成可以被信任的体验</h3>
+              <h3 id="project-story-03">从工作记录到任务，<br />探索 AI 驱动的设计工作流</h3>
             </div>
           </header>
-          <article class="project-card project-search" id="project-search" data-project="03">
-            <div class="project-copy">
-              <p class="project-type">MICROSOFT · 2026.09—2026.11</p>
-              <h4>China AI Search</h4>
-              <p class="project-summary">在合规、身份验证与品牌语义的约束下，设计一个更清楚、更可信的本地 AI 搜索入口。</p>
-              <ul class="project-tags" aria-label="项目关键词">
-                <li>信息架构</li>
-                <li>信任边界</li>
-                <li>本地化体验</li>
-              </ul>
-              <a class="project-link" href="#contact">案例整理中 <span>→</span></a>
-            </div>
-            <div class="project-visual" aria-label="中国 AI 搜索界面示意图">
-              <div class="search-window">
-                <div class="search-top"><span>Microsoft Start</span><i></i><i></i></div>
-                <div class="search-logo">问</div>
-                <div class="search-box"><span>试试问一个复杂的问题</span><b>↑</b></div>
-                <div class="search-suggestions"><span>解释概念</span><span>比较方案</span><span>帮我创作</span></div>
-              </div>
-              <div class="trust-card"><span>TRUST LAYER</span><b>身份 · 来源 · 边界</b><i></i></div>
-              <span class="visual-note note-c">LOCAL<br /><b>BY DESIGN</b></span>
-            </div>
-          </article>
-          </section>
-
-          <section class="project-slide" data-project-slide="04" data-scroll-screen aria-labelledby="project-story-04">
-          <header class="project-story reveal">
-            <p>PERSONAL LAB</p>
-            <div>
-              <h3 id="project-story-04">用自己做<br />第一个用户</h3>
-            </div>
-          </header>
-          <article class="project-card project-lab" id="project-lab" data-project="04">
+          <article class="project-card project-lab" id="project-lab" data-project="03">
             <div class="project-copy">
               <p class="project-type">PERSONAL · 2026—NOW</p>
-              <h4>YC Dashboard</h4>
-              <p class="project-summary">用自己做第一个用户，探索人与持续工作的 AI 如何保持理解、判断与接管权。</p>
+              <h4>YC WorkBuddy</h4>
+              <p class="project-summary">通过 AI 自动分析并整理工作信息与记录，将其转化为可执行任务，探索设计师从手动维护流程到与 AI 协同推进工作的转变。</p>
               <ul class="project-tags" aria-label="项目关键词">
-                <li>Voice → Intent</li>
-                <li>Observable agents</li>
-                <li>Human takeover</li>
+                <li>Work Context</li>
+                <li>Task Automation</li>
+                <li>Design Workflow</li>
               </ul>
               <a class="project-link" href="./yc-dashboard.html">查看个人实验 <span>→</span></a>
             </div>
             <div class="project-visual project-visual-lab">
-              <div class="lab-placeholder" role="img" aria-label="YC Dashboard 从语音到意图与任务的工作流预览">
-                <span>PERSONAL AI WORKSPACE</span>
-                <strong>Voice → Intent → Task</strong>
-                <p>让 AI 的理解过程可见、可修正、可接管</p>
-                <small>YC DASHBOARD · WIP</small>
-              </div>
+              <picture>
+                <source media="(max-width: 720px)" srcset="./assets/yc-dashboard-home-1100.webp" type="image/webp" />
+                <img class="yc-dashboard-cover" src="./assets/yc-dashboard-home.webp" width="2400" height="1551" alt="YC WorkBuddy 运行在 macOS 桌面中的首页，展示日程、任务与工作概览" loading="lazy" decoding="async" />
+              </picture>
             </div>
           </article>
           </section>
         </div>
       </section>
 
+      <section
+        class="project-archive"
+        id="more-work"
+        data-coverflow
+        data-scroll-screen
+        data-scroll-long
+        aria-label="更多项目"
+      >
+        <div class="coverflow-pin" data-coverflow-pin>
+          <div
+            class="coverflow-stage"
+            data-coverflow-stage
+            role="region"
+            aria-roledescription="轮播"
+            aria-label="其他项目切片"
+            tabindex="0"
+          >
+            <div class="coverflow-track" data-coverflow-track>
+              <article
+                class="coverflow-card is-active"
+                data-coverflow-card
+                data-title="China AI Landing"
+                data-meta="BING AI RESULT · SEARCH EXPERIENCE"
+                data-description="为 Bing 中国设计 AI Result，重新组织回答、来源引用与结果延展，让生成式内容更易理解，也能自然衔接后续搜索。"
+                role="group"
+                aria-roledescription="切片"
+                aria-label="1 / 6，China AI Landing"
+                aria-current="true"
+              >
+                <img
+                  class="archive-card-image"
+                  src="./assets/china-ai-landing-cover.webp"
+                  alt=""
+                  width="3200"
+                  height="1800"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </article>
+
+              <article
+                class="coverflow-card"
+                data-coverflow-card
+                data-title="Chinese Keyboard"
+                data-meta="WINDOWS PRODUCT · INPUT SYSTEM"
+                data-description="把候选栏、设置、组件状态和无障碍规则接入可验证的 design-to-code 交付链路。"
+                role="group"
+                aria-roledescription="切片"
+                aria-label="2 / 6，Chinese Keyboard"
+              >
+                <img
+                  class="archive-card-image"
+                  src="./assets/chinese-keyboard-cover.png"
+                  alt=""
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </article>
+
+              <article
+                class="coverflow-card"
+                data-coverflow-card
+                data-title="Mid-autumn Event"
+                data-meta="RAPID BUILD · PROJECT OWNER"
+                data-description="作为项目 Owner，借助 AI 辅助编程，在一周内完成并上线 5 款互动小游戏及整套活动视觉。"
+                role="group"
+                aria-roledescription="切片"
+                aria-label="3 / 6，Mid-autumn Event"
+              >
+                <img
+                  class="archive-card-image"
+                  src="./assets/mid-autumn-event-cover.webp"
+                  alt=""
+                  width="3840"
+                  height="2240"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </article>
+
+              <article
+                class="coverflow-card"
+                data-coverflow-card
+                data-title="Bing growth - Ultimate Giveaway Sweepstakes"
+                data-meta="BING GROWTH · REWARDS CAMPAIGN"
+                data-description="围绕 Microsoft Rewards 抽奖活动，设计从任务获取、即时开奖到中奖反馈的完整移动端体验；活动验证了 Rewards 驱动移动增长的潜力，日均带来约 4.4K 次归因 Bing App 安装。"
+                role="group"
+                aria-roledescription="切片"
+                aria-label="4 / 6，Bing growth - Ultimate Giveaway Sweepstakes"
+              >
+                <img
+                  class="archive-card-image"
+                  src="./assets/ultimate-giveaway-cover.webp"
+                  alt=""
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </article>
+
+              <article
+                class="coverflow-card"
+                data-coverflow-card
+                data-title="Pride Lanyard Design"
+                data-meta="MICROSOFT PRIDE · VISUAL DESIGN"
+                data-description="Pride Month 期间设计两款主题挂绳；其中一款在 16 个参选方案中获得最高票，并最终投入实体生产。"
+                role="group"
+                aria-roledescription="切片"
+                aria-label="5 / 6，Pride Lanyard Design"
+              >
+                <img
+                  class="archive-card-image"
+                  src="./assets/pride-lanyard-cover.webp"
+                  alt=""
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </article>
+
+              <article
+                class="coverflow-card"
+                data-coverflow-card
+                data-title="Hackathon"
+                data-meta="AI USER RESEARCH · HACKATHON WINNER"
+                data-description="2023 Hackathon 中，团队在一周内设计 AI 用户研究插件，帮助 PM 与设计师推进研究；项目从超过 15,000 个参赛作品中脱颖而出，获得 Other 类 Executive Challenge 第一名。"
+                role="group"
+                aria-roledescription="切片"
+                aria-label="6 / 6，Hackathon"
+              >
+                <img
+                  class="archive-card-image"
+                  src="./assets/hackathon-cover.webp"
+                  alt=""
+                  width="1920"
+                  height="1080"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </article>
+            </div>
+          </div>
+
+          <div class="coverflow-footer">
+            <div class="coverflow-copy" aria-live="polite" aria-atomic="true">
+              <h3 data-coverflow-title>China AI Landing</h3>
+              <p data-coverflow-description>为 Bing 中国设计 AI Result，重新组织回答、来源引用与结果延展，让生成式内容更易理解，也能自然衔接后续搜索。</p>
+            </div>
+            <div class="coverflow-status">
+              <div class="coverflow-controls" aria-label="项目切片控制">
+                <button type="button" data-coverflow-prev aria-label="上一个项目切片">←</button>
+                <button type="button" data-coverflow-next aria-label="下一个项目切片">→</button>
+              </div>
+              <p><strong data-coverflow-current>01</strong><span>/06</span></p>
+              <div class="coverflow-progress" aria-hidden="true"><i data-coverflow-progress></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div class="contact-screen" data-scroll-screen>
         <section class="contact" id="contact" aria-labelledby="contact-title">
-          <p class="contact-index">04 · 接下来</p>
-          <div class="contact-copy reveal">
-            <span>如果你也在处理复杂系统，</span>
-            <h2 id="contact-title">我们可以一起<br /><em>把它做清楚。</em></h2>
-            <a href="mailto:yuchen.portfolio@example.com">yuchen.portfolio@example.com ↗</a>
+          <p class="contact-index">05 · 接下来</p>
+          <div class="contact-shell" data-contact-shell>
+            <div class="contact-copy reveal">
+              <h2 id="contact-title">让我们一起<br /><em>创造新的世界。</em></h2>
+              <button
+                class="contact-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="contact-details"
+                data-contact-toggle
+                data-cursor-label="展开联系方式"
+              >
+                <svg class="contact-trigger-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M12 3.5c-5 0-9 3.42-9 7.64 0 2.4 1.3 4.54 3.34 5.94l-.76 3.42 3.75-1.8c.85.22 1.74.34 2.67.34 5 0 9-3.42 9-7.64S17 3.5 12 3.5Z" />
+                </svg>
+                <span>请联系我</span>
+              </button>
+            </div>
+
+            <div class="contact-details-panel" id="contact-details" aria-hidden="true" data-contact-details>
+              <div class="contact-details-inner">
+                <div class="contact-details">
+                  <div class="contact-info-column">
+                    <div class="contact-method contact-method-copy">
+                      <span>邮箱</span>
+                      <strong>yuchenjmm@163.com</strong>
+                      <button
+                        class="contact-copy-button"
+                        type="button"
+                        data-copy-button
+                        data-copy-label="邮箱"
+                        data-copy-value="yuchenjmm@163.com"
+                        data-cursor-label="复制邮箱"
+                        aria-label="复制邮箱地址"
+                      >复制</button>
+                    </div>
+                    <div class="contact-method contact-method-copy">
+                      <span>手机</span>
+                      <strong>134 3638 2999</strong>
+                      <button
+                        class="contact-copy-button"
+                        type="button"
+                        data-copy-button
+                        data-copy-label="手机号"
+                        data-copy-value="13436382999"
+                        data-cursor-label="复制手机号"
+                        aria-label="复制手机号码"
+                      >复制</button>
+                    </div>
+                  </div>
+                  <div class="contact-qr-card" data-contact-qr-card>
+                    <img src="./assets/wechat-contact-card.jpg" alt="雨晨的微信二维码名片" width="888" height="1131" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+                <p class="visually-hidden" aria-live="polite" aria-atomic="true" data-copy-status></p>
+              </div>
+            </div>
           </div>
-          <p class="contact-note">邮件地址为占位，请替换为你的真实联系方式。</p>
+          <p class="contact-note">期待与你聊聊。</p>
         </section>
 
         <footer>
@@ -312,6 +661,17 @@
       </div>
     </main>
 
-    <script src="./script.js?v=head-turn-4"></script>
+    <dialog class="project-lightbox" data-project-lightbox aria-labelledby="project-lightbox-title">
+      <div class="project-lightbox-shell">
+        <h2 class="sr-only" id="project-lightbox-title" data-project-lightbox-title>项目大图</h2>
+        <div class="project-lightbox-media" data-project-lightbox-media></div>
+        <p class="project-lightbox-label" data-project-lightbox-label aria-hidden="true"></p>
+        <button class="project-lightbox-close" type="button" data-project-lightbox-close aria-label="关闭项目大图">×</button>
+      </div>
+    </dialog>
+
+    <script src="./vendor/gsap.min.js"></script>
+    <script src="./vendor/ScrollTrigger.min.js"></script>
+    <script src="./script.js?v=contact-qr-3d-2"></script>
   </body>
 </html>

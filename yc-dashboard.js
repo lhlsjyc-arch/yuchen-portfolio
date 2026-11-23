@@ -1,273 +1,303 @@
-const ycReadingProgress = document.querySelector("[data-yc-reading-progress]");
-const ycDemo = document.querySelector("[data-yc-demo]");
-const ycDemoPanel = document.querySelector("[data-yc-demo-panel]");
-const ycStepButtons = [...document.querySelectorAll("[data-yc-step]")];
-const ycNextButton = document.querySelector("[data-yc-next]");
-const ycReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+function initCaseMotion() {
+  if (!window.gsap || !window.ScrollTrigger) return;
 
-function updateYcReadingProgress() {
-  if (!ycReadingProgress) return;
-  const scrollable = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-  const progress = Math.min(1, Math.max(0, window.scrollY / scrollable));
-  ycReadingProgress.style.transform = `scaleX(${progress})`;
+  const { gsap, ScrollTrigger } = window;
+  gsap.registerPlugin(ScrollTrigger);
+
+  const motion = gsap.matchMedia();
+
+  motion.add(
+    {
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+      fullMotion: "(prefers-reduced-motion: no-preference)",
+    },
+    (context) => {
+      const heroCopy = [
+        document.querySelector(".yc-hero__fact"),
+        document.querySelector(".yc-hero h1"),
+        document.querySelector(".yc-hero__lede"),
+        document.querySelector(".yc-hero__actions"),
+      ].filter(Boolean);
+      const heroVisual = document.querySelector("[data-hero-visual]");
+      const workflow = document.querySelector("[data-system-track]");
+      const workflowSteps = workflow ? gsap.utils.toArray(".system-steps li", workflow) : [];
+
+      if (context.conditions.reduceMotion) {
+        gsap.set([...heroCopy, heroVisual, ...workflowSteps].filter(Boolean), { clearProps: "all" });
+        return;
+      }
+
+      const heroTimeline = gsap.timeline({
+        defaults: { duration: 0.72, ease: "power3.out" },
+      });
+
+      heroTimeline
+        .fromTo(
+          heroCopy,
+          { autoAlpha: 0, y: 22 },
+          { autoAlpha: 1, y: 0, stagger: 0.07 },
+          0.08,
+        )
+        .fromTo(
+          heroVisual,
+          { autoAlpha: 0, y: 34, scale: 0.985 },
+          { autoAlpha: 1, y: 0, scale: 1, duration: 1.05, ease: "expo.out" },
+          0.28,
+        );
+
+      if (workflow && workflowSteps.length) {
+        const workflowTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: workflow,
+            start: "top 74%",
+            end: "bottom 46%",
+            scrub: 0.5,
+          },
+        });
+        workflowTimeline.fromTo(
+          workflowSteps,
+          { y: 12 },
+          { y: 0, duration: 0.72, ease: "power2.out" },
+          0,
+        );
+      }
+    },
+  );
+
+  if (document.readyState === "complete") ScrollTrigger.refresh();
+  else window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
+
+  window.addEventListener("pagehide", () => motion.revert(), { once: true });
 }
 
-updateYcReadingProgress();
-window.addEventListener("scroll", updateYcReadingProgress, { passive: true });
-window.addEventListener("resize", updateYcReadingProgress);
+initCaseMotion();
 
-const ycDemoStates = {
-  capture: {
-    status: "Listening to your intent",
-    pill: "CAPTURING",
-    overline: "VOICE INPUT · 00:18",
-    primary: "“先把 YC Dashboard 的页面做了。它比较简单，但要讲清楚我为什么需要一个自己的 AI 工作台。”",
-    showWave: true,
-    understandingTitle: "SYSTEM UNDERSTANDING",
-    understandingMeta: "Review before sending",
-    rows: [
-      ["01", "Intent", "制作 YC Dashboard 作品集页面"],
-      ["02", "Constraint", "个人实验，不包装成商业产品"],
-      ["03", "Outcome", "可浏览、可演示、移动端可读"],
-    ],
-    secondary: "保存为笔记",
-    primaryAction: "确认并委托",
-    assumption: "页面先作为个人实验入口，不占三个商业案例的主位置。",
-  },
-  clarify: {
-    status: "Waiting for one decision",
-    pill: "NEEDS INPUT",
-    overline: "CLARIFICATION · 1 QUESTION",
-    primary: "你希望语音输入只是快速记录，还是要在确认意图后直接创建并委托任务？",
-    showWave: false,
-    understandingTitle: "WHY THIS MATTERS",
-    understandingMeta: "Your answer changes the flow",
-    rows: [
-      ["A", "Save only", "保留语音与转写，稍后再整理"],
-      ["B", "Create task", "确认项目与目标后继续委托"],
-      ["C", "Ask every time", "每次都让用户选择，不替用户假定"],
-    ],
-    secondary: "只保存记录",
-    primaryAction: "选择 B 并继续",
-    assumption: "当前采用“确认后委托”；系统不会把每段语音自动变成任务。",
-  },
-  working: {
-    status: "Building the case page",
-    pill: "WORKING",
-    overline: "CURRENT STEP · 2 OF 3",
-    primary: "正在把语音输入从一个入口，提升为案例的核心功能。",
-    showWave: false,
-    understandingTitle: "LIVE ACTIVITY",
-    understandingMeta: "Pause or take over anytime",
-    rows: [
-      ["✓", "Evidence", "已读取项目细节与现有网站结构"],
-      ["02", "Now", "设计语音原文与系统理解的分层"],
-      ["03", "Next", "验证桌面、移动端与 reduced motion"],
-    ],
-    secondary: "暂停任务",
-    primaryAction: "查看当前工作",
-    assumption: "所有需要真实产品图的区域只保留占位，不生成替代插画。",
-  },
-  review: {
-    status: "Ready for your review",
-    pill: "REVIEW",
-    overline: "OUTPUT · CASE PAGE V1",
-    primary: "页面已经可以浏览。现在需要确认故事是否准确，以及哪些真实素材可以替换占位内容。",
-    showWave: false,
-    understandingTitle: "REVIEW CHECKLIST",
-    understandingMeta: "2 decisions remain",
-    rows: [
-      ["✓", "Story", "语音输入成为案例主线"],
-      ["!", "Evidence", "需要补真实界面与使用记录"],
-      ["!", "Naming", "YC 的公开全称仍待确认"],
-    ],
-    secondary: "提出修改",
-    primaryAction: "接受这一版",
-    assumption: "接受页面不等同于声明产品已上线；项目状态始终显示为 WIP。",
-  },
-};
+function initVoiceInteraction() {
+  if (!window.gsap) return;
 
-function createYcUnderstandingRow([index, label, value]) {
-  const item = document.createElement("li");
-  const marker = document.createElement("i");
-  const copy = document.createElement("span");
-  const title = document.createElement("b");
+  const { gsap } = window;
+  const trigger = document.querySelector("[data-voice-trigger]");
+  const stage = trigger?.closest(".voice-stage");
+  const wave = stage?.querySelector(".voice-wave");
+  const dots = wave ? gsap.utils.toArray("i", wave) : [];
+  const status = stage?.querySelector("[data-voice-status]");
 
-  marker.textContent = index;
-  title.textContent = label;
-  copy.append(title, document.createTextNode(value));
-  item.append(marker, copy);
-  return item;
-}
+  if (!trigger || !stage || !wave || !dots.length || !status) return;
 
-function setYcDemoState(step, options = {}) {
-  const state = ycDemoStates[step];
-  if (!state || !ycDemo || !ycDemoPanel) return;
+  const motion = gsap.matchMedia();
+  let isHolding = false;
+  let isRecording = false;
+  let reduceMotion = false;
+  let waveLoop = null;
+  let holdTimer = 0;
 
-  ycDemo.dataset.activeStep = step;
-  ycDemoPanel.dataset.step = step;
+  const setButtonRestingPosition = () => {
+    gsap.to(trigger, {
+      y: isHolding ? 5 : 0,
+      scale: isHolding ? 0.975 : 1,
+      duration: reduceMotion ? 0 : 0.18,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  };
 
-  ycStepButtons.forEach((button) => {
-    const active = button.dataset.ycStep === step;
-    button.setAttribute("aria-selected", String(active));
-    button.tabIndex = active ? 0 : -1;
-    if (active) ycDemoPanel.setAttribute("aria-labelledby", button.id);
-  });
+  const beginRecording = () => {
+    if (!isHolding || isRecording) return;
+    isRecording = true;
+    stage.classList.add("is-recording");
+    status.textContent = "正在录音 · 松开停止";
+    waveLoop?.kill();
 
-  const agentStatus = ycDemoPanel.querySelector("[data-yc-agent-status]");
-  const statusPill = ycDemoPanel.querySelector("[data-yc-status-pill]");
-  const overline = ycDemoPanel.querySelector("[data-yc-overline]");
-  const primary = ycDemoPanel.querySelector("[data-yc-primary]");
-  const wave = ycDemoPanel.querySelector("[data-yc-wave]");
-  const understanding = ycDemoPanel.querySelector("[data-yc-understanding]");
-  const understandingHeader = understanding?.querySelector("header span");
-  const understandingMeta = understanding?.querySelector("header b");
-  const list = ycDemoPanel.querySelector("[data-yc-list]");
-  const assumption = ycDemoPanel.querySelector("[data-yc-assumption]");
-  const actionButtons = ycDemoPanel.querySelectorAll("[data-yc-actions] button");
-
-  if (agentStatus) agentStatus.textContent = state.status;
-  if (statusPill) statusPill.textContent = state.pill;
-  if (overline) overline.textContent = state.overline;
-  if (primary) primary.textContent = state.primary;
-  if (wave) wave.hidden = !state.showWave;
-  if (understandingHeader) understandingHeader.textContent = state.understandingTitle;
-  if (understandingMeta) understandingMeta.textContent = state.understandingMeta;
-  if (assumption) assumption.textContent = state.assumption;
-  if (actionButtons[0]) actionButtons[0].textContent = state.secondary;
-  if (actionButtons[1]) {
-    actionButtons[1].replaceChildren(document.createTextNode(`${state.primaryAction} `));
-    const arrow = document.createElement("span");
-    arrow.textContent = "→";
-    actionButtons[1].append(arrow);
-  }
-
-  if (list) list.replaceChildren(...state.rows.map(createYcUnderstandingRow));
-
-  if (options.focus) {
-    ycStepButtons.find((button) => button.dataset.ycStep === step)?.focus();
-  }
-}
-
-ycStepButtons.forEach((button, index) => {
-  button.addEventListener("click", () => setYcDemoState(button.dataset.ycStep));
-  button.addEventListener("keydown", (event) => {
-    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-    event.preventDefault();
-    let nextIndex = index;
-    if (event.key === "ArrowLeft") nextIndex = (index - 1 + ycStepButtons.length) % ycStepButtons.length;
-    if (event.key === "ArrowRight") nextIndex = (index + 1) % ycStepButtons.length;
-    if (event.key === "Home") nextIndex = 0;
-    if (event.key === "End") nextIndex = ycStepButtons.length - 1;
-    setYcDemoState(ycStepButtons[nextIndex].dataset.ycStep, { focus: true });
-  });
-});
-
-ycNextButton?.addEventListener("click", () => {
-  const activeIndex = Math.max(0, ycStepButtons.findIndex((button) => button.getAttribute("aria-selected") === "true"));
-  const nextIndex = Math.min(ycStepButtons.length - 1, activeIndex + 1);
-  setYcDemoState(ycStepButtons[nextIndex].dataset.ycStep);
-});
-
-setYcDemoState("capture");
-
-const ycVoiceCard = document.querySelector("[data-yc-voice-card]");
-const ycVoiceToggle = document.querySelector("[data-yc-voice-toggle]");
-const ycVoiceLabel = document.querySelector("[data-yc-voice-label]");
-const ycVoiceTime = document.querySelector("[data-yc-voice-time]");
-const ycVoiceReset = document.querySelector("[data-yc-voice-reset]");
-const ycVoiceConfirm = document.querySelector("[data-yc-voice-confirm]");
-const ycEditTranscript = document.querySelector("[data-yc-edit-transcript]");
-const ycVoiceTranscript = document.querySelector("[data-yc-voice-result] section > p");
-let ycVoiceSeconds = 0;
-let ycVoiceTimer = 0;
-
-function formatYcVoiceTime(seconds) {
-  const minutes = String(Math.floor(seconds / 60)).padStart(2, "0");
-  const remainder = String(seconds % 60).padStart(2, "0");
-  return `${minutes}:${remainder}`;
-}
-
-function stopYcVoiceTimer() {
-  window.clearInterval(ycVoiceTimer);
-  ycVoiceTimer = 0;
-}
-
-function setYcVoiceState(state) {
-  if (!ycVoiceCard || !ycVoiceToggle || !ycVoiceLabel || !ycVoiceTime || !ycVoiceConfirm) return;
-  ycVoiceCard.dataset.state = state;
-  const recording = state === "recording";
-  const ready = state === "ready" || state === "confirmed";
-
-  ycVoiceToggle.setAttribute("aria-pressed", String(recording));
-  ycVoiceToggle.setAttribute("aria-label", recording ? "停止语音输入" : "开始语音输入");
-  ycVoiceConfirm.disabled = !ready;
-
-  if (state === "idle") {
-    ycVoiceLabel.textContent = "点击开始说话";
-    ycVoiceSeconds = 0;
-    ycVoiceTime.textContent = "00:00";
-    ycVoiceConfirm.replaceChildren(document.createTextNode("确认并创建任务 "));
-    const arrow = document.createElement("span");
-    arrow.textContent = "→";
-    ycVoiceConfirm.append(arrow);
-  }
-
-  if (recording) {
-    ycVoiceLabel.textContent = "正在保留你的原始表达 · 点击停止";
-    stopYcVoiceTimer();
-    ycVoiceTimer = window.setInterval(() => {
-      ycVoiceSeconds += 1;
-      ycVoiceTime.textContent = formatYcVoiceTime(ycVoiceSeconds);
-    }, 1000);
-  } else {
-    stopYcVoiceTimer();
-  }
-
-  if (state === "ready") {
-    ycVoiceLabel.textContent = "转写完成 · 请检查系统理解";
-    if (ycVoiceSeconds < 8) {
-      ycVoiceSeconds = 18;
-      ycVoiceTime.textContent = "00:18";
+    if (reduceMotion) {
+      gsap.set(dots, { height: (index) => [16, 32, 48, 22, 40, 28, 18][index] });
+      return;
     }
-  }
 
-  if (state === "confirmed") {
-    ycVoiceLabel.textContent = "任务已创建，并保留原始语音";
-    ycVoiceConfirm.textContent = "已委托 ✓";
-  }
+    gsap.set(dots, { height: 7 });
+    waveLoop = gsap.to(dots, {
+      height: (index) => [16, 32, 48, 22, 40, 28, 18][index],
+      duration: 0.16,
+      ease: "power1.inOut",
+      stagger: { each: 0.028, from: "center" },
+      repeat: -1,
+      yoyo: true,
+    });
+  };
+
+  const startHolding = () => {
+    if (isHolding) return;
+    isHolding = true;
+    trigger.setAttribute("aria-pressed", "true");
+    setButtonRestingPosition();
+    window.clearTimeout(holdTimer);
+    holdTimer = window.setTimeout(beginRecording, 400);
+  };
+
+  const stopHolding = () => {
+    if (!isHolding && !isRecording) return;
+    window.clearTimeout(holdTimer);
+    holdTimer = 0;
+    isHolding = false;
+    isRecording = false;
+    stage.classList.remove("is-recording");
+    trigger.setAttribute("aria-pressed", "false");
+    status.textContent = "0.4 秒后录音";
+    waveLoop?.kill();
+    waveLoop = null;
+
+    gsap.to(dots, { height: 7, duration: reduceMotion ? 0 : 0.12, overwrite: "auto" });
+    setButtonRestingPosition();
+  };
+
+  trigger.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0) return;
+    event.preventDefault();
+    trigger.setPointerCapture?.(event.pointerId);
+    startHolding();
+  });
+  ["pointerup", "pointercancel", "lostpointercapture"].forEach((eventName) => {
+    trigger.addEventListener(eventName, stopHolding);
+  });
+  trigger.addEventListener("keydown", (event) => {
+    if (event.repeat || (event.key !== "Enter" && event.key !== " ")) return;
+    event.preventDefault();
+    startHolding();
+  });
+  trigger.addEventListener("keyup", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    stopHolding();
+  });
+  trigger.addEventListener("blur", stopHolding);
+
+  motion.add("(prefers-reduced-motion: reduce)", () => {
+    reduceMotion = true;
+    if (isRecording) {
+      gsap.set(wave, { autoAlpha: 1, scale: 1 });
+      gsap.set(dots, { scaleY: (index) => [1.7, 1.55, 1.35, 1.25, 1.45, 1.6, 1.8][index] });
+    }
+    return () => {
+      reduceMotion = false;
+    };
+  });
+
+  window.addEventListener(
+    "pagehide",
+    () => {
+      waveLoop?.kill();
+      window.clearTimeout(holdTimer);
+      motion.revert();
+    },
+    { once: true },
+  );
 }
 
-ycVoiceToggle?.addEventListener("click", () => {
-  const currentState = ycVoiceCard?.dataset.state || "idle";
-  if (currentState === "recording") {
-    setYcVoiceState("ready");
-    return;
-  }
-  setYcVoiceState("recording");
-});
+initVoiceInteraction();
 
-ycVoiceReset?.addEventListener("click", () => setYcVoiceState("idle"));
-ycVoiceConfirm?.addEventListener("click", () => {
-  if (!ycVoiceConfirm.disabled) setYcVoiceState("confirmed");
-});
+function initSystemCarousel() {
+  const carousel = document.querySelector("[data-system-carousel]");
+  const slides = carousel ? [...carousel.querySelectorAll(".system-gallery figure")] : [];
+  const dots = carousel ? [...carousel.querySelectorAll("[data-carousel-dot]")] : [];
+  const previousButton = carousel?.querySelector("[data-carousel-prev]");
+  const nextButton = carousel?.querySelector("[data-carousel-next]");
+  const count = carousel?.querySelector("[data-carousel-count]");
 
-ycEditTranscript?.addEventListener("click", () => {
-  if (!ycVoiceTranscript) return;
-  const editing = ycVoiceTranscript.contentEditable === "true";
-  ycVoiceTranscript.contentEditable = String(!editing);
-  ycEditTranscript.textContent = editing ? "编辑" : "完成";
-  if (!editing) {
-    ycVoiceTranscript.focus();
-    const selection = window.getSelection();
-    const range = document.createRange();
-    range.selectNodeContents(ycVoiceTranscript);
-    range.collapse(false);
-    selection?.removeAllRanges();
-    selection?.addRange(range);
-  }
-});
+  if (!carousel || !slides.length || !previousButton || !nextButton || !count) return;
 
-if (ycReducedMotion.matches) {
-  document.documentElement.dataset.ycReducedMotion = "true";
+  let activeIndex = 0;
+
+  const showSlide = (nextIndex) => {
+    activeIndex = (nextIndex + slides.length) % slides.length;
+
+    slides.forEach((slide, index) => {
+      const isActive = index === activeIndex;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+      slide.toggleAttribute("inert", !isActive);
+      const image = slide.querySelector("img");
+      if (image) image.tabIndex = isActive ? 0 : -1;
+    });
+
+    dots.forEach((dot, index) => {
+      const isActive = index === activeIndex;
+      dot.classList.toggle("is-active", isActive);
+      if (isActive) dot.setAttribute("aria-current", "true");
+      else dot.removeAttribute("aria-current");
+    });
+
+    count.textContent = `${activeIndex + 1} / ${slides.length}`;
+  };
+
+  previousButton.addEventListener("click", () => showSlide(activeIndex - 1));
+  nextButton.addEventListener("click", () => showSlide(activeIndex + 1));
+  dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
+  carousel.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    showSlide(activeIndex + (event.key === "ArrowLeft" ? -1 : 1));
+  });
+
+  showSlide(0);
 }
+
+initSystemCarousel();
+
+const imageLightbox = document.querySelector("[data-image-lightbox]");
+const imageLightboxImage = imageLightbox?.querySelector("[data-image-lightbox-image]");
+const imageLightboxClose = imageLightbox?.querySelector("[data-image-lightbox-close]");
+const zoomableImages = [...document.querySelectorAll(".yc-page main img:not([data-image-zoom-disabled])")];
+const lightboxMotionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+let lightboxSourceImage = null;
+let lightboxCloseTimer = 0;
+
+function closeImageLightbox() {
+  if (!imageLightbox?.open) return;
+  window.clearTimeout(lightboxCloseTimer);
+  imageLightbox.classList.remove("is-open");
+  document.body.classList.remove("image-lightbox-open");
+
+  const finishClose = () => {
+    imageLightbox.close();
+    imageLightboxImage?.removeAttribute("src");
+    lightboxSourceImage?.focus({ preventScroll: true });
+    lightboxSourceImage = null;
+  };
+
+  if (lightboxMotionPreference.matches) finishClose();
+  else lightboxCloseTimer = window.setTimeout(finishClose, 220);
+}
+
+function openImageLightbox(image) {
+  if (!imageLightbox || !imageLightboxImage) return;
+  window.clearTimeout(lightboxCloseTimer);
+  lightboxSourceImage = image;
+  imageLightboxImage.src = image.currentSrc || image.src;
+  imageLightboxImage.alt = image.alt || "放大图片";
+  document.body.classList.add("image-lightbox-open");
+  if (!imageLightbox.open) imageLightbox.showModal();
+  requestAnimationFrame(() => imageLightbox.classList.add("is-open"));
+}
+
+zoomableImages.forEach((image) => {
+  const description = image.alt || "案例图片";
+  image.tabIndex = image.closest("[aria-hidden='true'][inert]") ? -1 : 0;
+  image.setAttribute("role", "button");
+  image.setAttribute("aria-haspopup", "dialog");
+  image.setAttribute("aria-label", `放大查看：${description}`);
+  image.addEventListener("click", () => openImageLightbox(image));
+  image.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    openImageLightbox(image);
+  });
+});
+
+imageLightboxClose?.addEventListener("click", closeImageLightbox);
+imageLightbox?.addEventListener("click", (event) => {
+  if (event.target === imageLightbox) closeImageLightbox();
+});
+imageLightbox?.addEventListener("cancel", (event) => {
+  event.preventDefault();
+  closeImageLightbox();
+});
